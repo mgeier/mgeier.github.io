@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2024-11-22T14:44:25+00:00" />
+    <title>Reproducible Research &#8212; homepage</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css?v=b2d00be7" />
+
+    <script src="_static/documentation_options.js?v=98035ebd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Open Education" href="open_education.html" />
+    <link rel="prev" title="Audio in Python" href="python-audio.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">homepage</a>
+            <a class="top" href="#">Reproducible Research</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="python-audio.html" class="nav-icon previous" title="previous:&#13;Audio in Python" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="open_education.html" class="nav-icon next" title="next:&#13;Open Education" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="python-audio.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Audio in Python
+          </span>
+        </div>
+      </a>
+      <a class="next" href="open_education.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Open Education
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="reproducible-research">
+<h1>Reproducible Research<a class="headerlink" href="#reproducible-research" title="Link to this heading">§</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is, much like research itself, and the art of eating spaghetti without
+soiling yourself, work-in-progress.</p>
+</div>
+<p>This page is not as general as it should be.
+It is biased towards audio signal processing, audio engineering, spatial audio
+reproduction and auditory perception.
+However, many of the ideas presented here can be applied more widely.</p>
+<p>Other collections of similar information:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/INRIA/awesome-open-science-software">https://github.com/INRIA/awesome-open-science-software</a></p></li>
+<li><p><a class="reference external" href="https://danmackinlay.name/notebook/reproducible_research">https://danmackinlay.name/notebook/reproducible_research</a></p></li>
+</ul>
+</div></blockquote>
+<section id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">§</a></h2>
+<section id="openness">
+<h3>Openness<a class="headerlink" href="#openness" title="Link to this heading">§</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>The open definition</p>
+<p><a class="reference external" href="http://opendefinition.org/">http://opendefinition.org/</a></p>
+</div>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_science">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open science</strong> is the movement to make scientific research, data and
+dissemination accessible to all levels of an inquiring society, amateur or
+professional. It encompasses practices such as publishing open research,
+campaigning for open access, encouraging scientists to practice open notebook
+science, and generally making it easier to publish and communicate scientific
+knowledge.  […]
+In modern times there is debate about the extent to which scientific
+information should be shared. The conflict is between the desire of
+scientists to have access to shared resources versus the desire of individual
+entities to profit when other entities partake of their resources.</p>
+</div></blockquote>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_research">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open research</strong> is research conducted in the spirit of free and open source
+software. Much like open source schemes that are built around a source code
+that is made public, the central theme of open research is to make clear
+accounts of the methodology freely available via the internet, along with any
+data or results extracted or derived from them. This permits a massively
+distributed collaboration, and one in which anyone may participate at any
+level of the project.</p>
+<p>Especially if the research is scientific in nature, it is frequently referred
+to as <em>open science</em>. Open research can also include social sciences, the
+humanities, mathematics, engineering and medicine.</p>
+</div></blockquote>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open data</strong> is the idea that some data should be freely available to
+everyone to use and republish as they wish, without restrictions from
+copyright, patents or other mechanisms of control.  The goals of the open data
+movement are similar to those of other “open” movements such as open source,
+open hardware, open content, and open access.</p>
+</div></blockquote>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_science_data">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open science data</strong> is a type of open data focused on publishing
+observations and results of scientific activities available for anyone to
+analyze and reuse.</p>
+</div></blockquote>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_notebook_science">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open notebook science</strong> is the practice of making the entire primary record
+of a research project publicly available online as it is recorded. This
+involves placing the personal, or laboratory, notebook of the researcher
+online along with all raw and processed data, and any associated material, as
+this material is generated. The approach may be summed up by the slogan ‘no
+insider information’. It is the logical extreme of transparent approaches to
+research and explicitly includes the making available of failed, less
+significant, and otherwise unpublished experiments; so called ‘dark data’.</p>
+</div></blockquote>
+<p>Definition by <a class="reference external" href="https://en.wikipedia.org/wiki/Open_access">Wikipedia</a>:</p>
+<blockquote>
+<div><p><strong>Open access</strong> (<strong>OA</strong>) refers to online research outputs that are free of
+all restrictions on access (e.g. access tolls) and free of many restrictions
+on use (e.g. certain copyright and license restrictions). Open access can be
+applied to all forms of published research output, including peer-reviewed
+and non peer-reviewed academic journal articles, conference papers, theses,
+book chapters, and monographs.</p>
+<p>Two degrees of open access can be distinguished: gratis open access, which is
+online access free of charge, and libre open access, which is online access
+free of charge plus various additional usage rights.</p>
+</div></blockquote>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Reproducible Research vs. Non-Reproducible Research?</p>
+</div>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>reproducible vs. easily reproducible</p>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>online material as supplement to traditional publications</p>
+</div>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Reproducibility">https://en.wikipedia.org/wiki/Reproducibility</a></p>
+</div>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Open_research">https://en.wikipedia.org/wiki/Open_research</a></p>
+</div>
+<p><a class="reference external" href="https://doi.org/10.1109/MSP.2009.932122">Vandewalle et al.</a> distinguish six
+degrees of reproducibility:</p>
+<blockquote>
+<div><ol class="arabic simple" start="5">
+<li><p>The results can be easily reproduced by an independent researcher with at
+most 15 min of user effort, requiring only standard, freely available tools
+(C compiler, etc.).</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>The results can be easily reproduced by an independent researcher with at
+most 15 minutes of user effort, requiring some proprietary source packages
+(MATLAB, etc.).</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>The results can be reproduced by an independent researcher, requiring
+considerable effort.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>The results could be reproduced by an independent researcher, requiring
+extreme effort.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>The results cannot seem to be reproduced by an independent researcher.</p></li>
+</ol>
+<ol class="arabic simple" start="0">
+<li><p>The results cannot be reproduced by an independent researcher.</p></li>
+</ol>
+</div></blockquote>
+<p>While I don’t agree with all details (especially the over-concrete time
+specifications and the overly vague effort metrics), I like the general idea.</p>
+</section>
+<section id="replicability-vs-reproducibility">
+<h3>Replicability vs. Reproducibility<a class="headerlink" href="#replicability-vs-reproducibility" title="Link to this heading">§</a></h3>
+<p>Great overview: <a class="reference external" href="https://web.archive.org/web/20210302204128/https://languagelog.ldc.upenn.edu/nll/?p=21956">Language Log: Replicability vs. reproducibility — or is it the other way around?</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Reproducibility">Wikipedia</a> thinks it’s the
+same:</p>
+<blockquote>
+<div><p><strong>Reproducibility</strong> is the ability of an entire experiment or study to be
+duplicated, either by the same researcher or by someone else working
+independently. Reproducing an experiment is called <strong>replicating</strong> it.
+Reproducibility is one of the main principles of the scientific method.</p>
+</div></blockquote>
+<p><a class="reference external" href="http://cogprints.org/7691/">Chris Drummond</a> claims they are different:</p>
+<blockquote>
+<div><p>Reproducibility requires changes; replicability avoids them. Although
+reproducibility is desirable, I contend that the impoverished version,
+replicability, is one not worth having.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://doi.org/10.1093/biostatistics/kxp014">Roger D. Peng</a>
+also claims that they are different, but uses slightly different definitions:</p>
+<blockquote>
+<div><p>The replication of scientific findings using independent investigators,
+methods, data, equipment, and protocols has long been, and will continue to
+be, the standard by which scientific claims are evaluated. However, in many
+fields of study there are examples of scientific investigations that cannot be
+fully replicated because of a lack of time or resources. In such a situation,
+there is a need for a minimum standard that can fill the void between full
+replication and nothing. One candidate for this minimum standard is
+“reproducible research”, which requires that data sets and computer code be
+made available to others for verifying published results and conducting
+alternative analyses.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://magazine.amstat.org/blog/2011/07/01/trust-your-science/">Victoria Stodden</a>
+defines them slightly differently (and throws in a third concept –
+“repeatability”):</p>
+<blockquote>
+<div><p>We can reserve the term “replicability” for the regeneration of published
+results from author-provided code and data. […] Reproducibility is a more
+general term, implying both replication and the regeneration of findings with
+at least some independence from the code and/or data associated with the
+original publication. Both refer to the analysis that occurs after
+publication. A third term, “repeatability,” is sometimes used in place of
+reproducibility, but this is more typically used as a term of art referring to
+the sensitivity of results when underlying measurements are retaken.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">§</a></h2>
+<p>Here are few guidelines which may (or may not) help to make your work more
+reproducible:</p>
+<dl>
+<dt>make everything public (and each step of it)</dt><dd><p>At some point, every aspect of your work should be publicly accessible.
+And not only the parts which (you think) are most interesting … every single
+bit and every single step.
+This way it will be easiest for others to reproduce your work.</p>
+<p>You may not want to publish everything from the very beginning, which leads to
+the next point …</p>
+</dd>
+<dt>release early</dt><dd><p>This is borrowed from the Open Source movement, but it’s also applicable here.
+Even if you feel it’s not finished yet, just make it public! Because if you
+wait too long, you’ll probably never release it …</p>
+<p>If you release early, you also give others the chance to comment on your work
+and to suggest improvements before you think it’s “finished” (which may never
+happen).</p>
+</dd>
+<dt>make stuff public by default</dt><dd><p>In case of doubt, make it public! Keep things only for yourself if there is a
+good reason. And even if there is a reason now, you should think about making
+it public later (e.g. after publication of a related paper).</p>
+</dd>
+<dt>think about others</dt><dd><p>Don’t just think about how great your results are, also think about how you
+can make it as easy as possible for others to reproduce them.</p>
+</dd>
+<dt>use tools that others can use, too</dt><dd><p>If you have a choice, prefer tools that are available to other researchers,
+too.</p>
+<p>Of course, often expensive equipment is needed in research, and sometimes only
+few laboratories have even the theoretical possibility to reproduce your
+experiments. We have to live with that.</p>
+<p>When it comes to software, there is often an alternative to expensive
+programs, sometimes the free ones are even better.
+Try to choose software that is accessible to most people, and try to use
+software that runs on different operating systems.</p>
+</dd>
+<dt>use open source software</dt><dd><p>TODO: content</p>
+</dd>
+<dt>specify a license</dt><dd><p>If provide something to the public and don’t specify a license, said public
+may have a hard time using the thing legally.
+With everything you publish, you should also tell people what they may and may
+not do with it.</p>
+<p>But remember: the more restrictions you impose, the more freedom you take away
+from people who want to use your work.
+You can waive all your rights (at least with regard to copyright law), you can
+request attribution, you can demand that derived works must be published under
+the same conditions as the original work (a.k.a. <em>share-alike</em>), you can
+forbid commercial use, …</p>
+<p>Try these links to help you choose an appropriate license:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://creativecommons.org/choose/">https://creativecommons.org/choose/</a></p></li>
+<li><p><a class="reference external" href="http://three.org/openart/license_chooser/">http://three.org/openart/license_chooser/</a></p></li>
+</ul>
+<p>For more details, have a look there: <a class="reference external" href="https://tldrlegal.com/">https://tldrlegal.com/</a>.</p>
+<p>Licensing your research, webinar with Brandon Butler: <a class="reference external" href="https://osf.io/6uupa/">https://osf.io/6uupa/</a></p>
+</dd>
+<dt>bring research and teaching closer together</dt><dd><p>Every research starts from some existing knowledge.</p>
+<p>TODO: more arguments</p>
+<p>Today’s students are tomorrow’s researchers.</p>
+</dd>
+</dl>
+</section>
+<section id="what-should-be-reproducible">
+<h2>What Should be Reproducible?<a class="headerlink" href="#what-should-be-reproducible" title="Link to this heading">§</a></h2>
+<p>Short answer: everything!</p>
+<p>But let’s be a bit more verbose.
+Ideally, the whole research process should be reproducible.
+The following list shows things that can (and should!) be made reproducible.
+There are also some tools mentioned that may help, see below for links to more
+software and libraries.</p>
+<p>All this is of course very much dependent on the research area. Some points may
+apply to your area, others won’t.</p>
+<dl>
+<dt>collecting ideas</dt><dd><p>Ideas are the core of any research activity. They are also one of the main
+resources needed by researchers (besides funding). Understandably, many
+researcher are reluctant to make their ideas public before they reap their
+fruits themselves.</p>
+<p>But at a later time, e.g. after a publication, there may not be a reason
+anymore to keep the ideas a secret.
+Also, some researchers (mostly the good ones) have more ideas than they could
+possibly work on. In this case they should make their “vacant” ideas public
+for other researchers to work on.</p>
+<p>In the era of the world-wide-web there are countless possibilities to share
+your ideas, no need to give any pointers here, you’ll find something.</p>
+</dd>
+<dt>symbolic derivations</dt><dd><p>In many areas, deriving equations is the daily drill of a researcher.
+In traditional publications, however, only a limited amount of space can be
+used for equations, so typically only a few steps of the derivation are shown
+or even only the final resulting equation.</p>
+<p>This can make it very time-consuming for other researchers to reproduce and
+build on your results.
+Ideally, for every published equation the complete and detailed derivation
+should also be publicly available.</p>
+<p>You can create nice equations using LaTeX documents, but also some blogging
+systems support entering math equations. IPython also supports nice-looking
+equations (using MathJax).</p>
+<p>TODO: CASs</p>
+</dd>
+<dt>numeric calculations, simulations, visualizations, plots</dt><dd><p>TODO: NumPy, SciPy, matplotlib, Mayavi, …</p>
+</dd>
+<dt>cluster computing</dt><dd><p>TODO: IPython</p>
+</dd>
+<dt>measurements</dt><dd><p>TODO: settings, logs, software, pre-/post-processing scripts</p>
+</dd>
+<dt>experimental apparatus</dt><dd><dl class="simple">
+<dt>TODO: detailed description, drawings, photos, detailed list of devices ant</dt><dd><p>the used configuration, …</p>
+</dd>
+<dt>TODO: software (ideally open source), scripts, configuration files, data</dt><dd><p>files, …</p>
+</dd>
+</dl>
+</dd>
+<dt>statistical evaluation</dt><dd><p>TODO: raw data, all scripts</p>
+<p>TODO: pandas, R</p>
+</dd>
+</dl>
+</section>
+<section id="criticism">
+<h2>Criticism<a class="headerlink" href="#criticism" title="Link to this heading">§</a></h2>
+<p>Three points from
+<a class="reference external" href="https://en.wikipedia.org/wiki/Open_notebook_science#Drawbacks">https://en.wikipedia.org/wiki/Open_notebook_science#Drawbacks</a>:</p>
+<ol class="arabic simple">
+<li><p>data theft</p></li>
+<li><p>not patentable once published</p></li>
+<li><p>data deluge</p></li>
+</ol>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading">§</a></h2>
+<p>The following is a completely subjective selection of open-source software.
+This is not at all exhaustive, there are a lot of alternatives, both commercial
+and non-commercial.</p>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Link to this heading">§</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Why Python?</p>
+<p>The chief reason is that it’s just a beautiful programming language.
+And it’s versatile … so the <em>two</em> reasons are its beauty and versatility
+… and its extensive standard library,
+therefore the <em>three</em> reasons to use Python are its beauty, versatility and
+extensive standard library … and a sheer unimaginably humongous number of
+third-party libraries and extensions.</p>
+<p>Let’s just say <em>amongst</em> the reasons to choose Python are such diverse
+elements as beauty, versatility, extremely useful standard library and
+tons of third-party stuff.</p>
+<p>For more information, watch this: <a class="reference external" href="https://youtu.be/vt0Y39eMvpI">https://youtu.be/vt0Y39eMvpI</a></p>
+</div>
+<dl>
+<dt>Scientific Python (SciPy)</dt><dd><p><a class="reference external" href="https://scipy.org/">https://scipy.org/</a></p>
+<p>This is a collection of many software projects:
+<a class="reference external" href="https://numpy.org/">NumPy</a>,
+<a class="reference external" href="https://scipy.org/scipylib/">SciPy</a>,
+<a class="reference external" href="https://matplotlib.org/">matplotlib</a>,
+<a class="reference external" href="https://ipython.org/">IPython</a>,
+<a class="reference external" href="https://www.sympy.org/">SymPy</a>,
+<a class="reference external" href="https://pandas.pydata.org/">pandas</a>,
+<a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">Mayavi</a>,
+<a class="reference external" href="https://www.pytables.org/">PyTables</a>,
+and many more …</p>
+</dd>
+</dl>
+<p>See also my <a class="reference external" href="https://nbviewer.jupyter.org/github/mgeier/python-audio/blob/master/index.ipynb">introduction to Python, NumPy, IPython, …</a></p>
+</section>
+<section id="latex">
+<h3>LaTeX<a class="headerlink" href="#latex" title="Link to this heading">§</a></h3>
+<p>…</p>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>TikZ, gnuplot, beamer</p>
+</div>
+</section>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Link to this heading">§</a></h3>
+<p>See <a class="reference internal" href="git.html"><span class="doc">Getting Started with Git</span></a>.</p>
+</section>
+<section id="more-software">
+<h3>More Software<a class="headerlink" href="#more-software" title="Link to this heading">§</a></h3>
+<p>There’s always more …</p>
+<dl class="simple">
+<dt>R</dt><dd><p><a class="reference external" href="http://www.r-project.org/">http://www.r-project.org/</a></p>
+</dd>
+<dt>Julia</dt><dd><p><a class="reference external" href="https://julialang.org/">https://julialang.org/</a></p>
+</dd>
+<dt>Sage</dt><dd><p><a class="reference external" href="https://www.sagemath.org/">https://www.sagemath.org/</a></p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publication-tools">
+<h2>Publication Tools<a class="headerlink" href="#publication-tools" title="Link to this heading">§</a></h2>
+<dl class="simple">
+<dt>IPython</dt><dd><p><a class="reference external" href="http://ipython.org/">http://ipython.org/</a></p>
+</dd>
+<dt>IJulia</dt><dd><p><a class="reference external" href="https://github.com/JuliaLang/IJulia.jl">https://github.com/JuliaLang/IJulia.jl</a> (<a class="reference external" href="https://nbviewer.jupyter.org/url/jdj.mit.edu/~stevenj/IJulia%20Preview.ipynb">example notebook</a>)</p>
+</dd>
+<dt>VisTrails</dt><dd><p><a class="reference external" href="https://www.vistrails.org/index.php/Main_Page">https://www.vistrails.org/index.php/Main_Page</a></p>
+</dd>
+<dt>Sweave</dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sweave">https://en.wikipedia.org/wiki/Sweave</a></p>
+</dd>
+<dt>knitr</dt><dd><p><a class="reference external" href="https://yihui.org/knitr/">https://yihui.org/knitr/</a></p>
+</dd>
+<dt>Pweave</dt><dd><p><a class="reference external" href="http://mpastell.com/pweave/">http://mpastell.com/pweave/</a></p>
+</dd>
+<dt>ActivePapers</dt><dd><dl class="simple">
+<dt><a class="reference external" href="https://activepapers.github.io/">https://activepapers.github.io/</a></dt><dd><ul class="simple">
+<li><p>active_papers (JVM):
+<a class="reference external" href="https://activepapers.github.io/jvm-edition/">https://activepapers.github.io/jvm-edition/</a></p></li>
+<li><p>activepapers-python (Python):
+<a class="reference external" href="https://activepapers.github.io/python-edition/">https://activepapers.github.io/python-edition/</a></p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="online-services">
+<h2>Online Services<a class="headerlink" href="#online-services" title="Link to this heading">§</a></h2>
+<dl class="simple">
+<dt>IPython/Jupyter Notebook Viewer</dt><dd><p><a class="reference external" href="https://nbviewer.jupyter.org/">https://nbviewer.jupyter.org/</a></p>
+</dd>
+<dt>Binder (Turn a GitHub repo into a collection of interactive notebooks)</dt><dd><p><a class="reference external" href="https://mybinder.org/">https://mybinder.org/</a></p>
+</dd>
+<dt>Github</dt><dd><p><a class="reference external" href="https://github.com/">https://github.com/</a></p>
+</dd>
+<dt>Bitbucket (free unlimited accounts for academic users)</dt><dd><p><a class="reference external" href="https://bitbucket.org/">https://bitbucket.org/</a></p>
+</dd>
+<dt>figshare</dt><dd><p><a class="reference external" href="https://figshare.com/">https://figshare.com/</a>, <a class="reference external" href="https://figshare.com/blog/Working_with_Github_and_Mozilla_to_enable_Code_as_a_Research_Output_/117">connecting Github and figshare</a></p>
+</dd>
+<dt>zenodo</dt><dd><p><a class="reference external" href="https://zenodo.org/">https://zenodo.org/</a></p>
+</dd>
+<dt>ORCID</dt><dd><p><a class="reference external" href="https://orcid.org/">https://orcid.org/</a></p>
+</dd>
+<dt>crossref</dt><dd><p><a class="reference external" href="https://www.crossref.org/">https://www.crossref.org/</a></p>
+</dd>
+<dt>DataCite</dt><dd><p><a class="reference external" href="https://datacite.org/">https://datacite.org/</a></p>
+</dd>
+<dt>my experiment</dt><dd><p><a class="reference external" href="https://www.myexperiment.org/">https://www.myexperiment.org/</a></p>
+</dd>
+<dt>re3data (Registry of Research Data Repositories)</dt><dd><p><a class="reference external" href="https://www.re3data.org/">https://www.re3data.org/</a></p>
+</dd>
+<dt>RADAR - Research Data Repository</dt><dd><p><a class="reference external" href="https://www.radar-service.eu/en">https://www.radar-service.eu/en</a></p>
+</dd>
+<dt>Open Science Framework</dt><dd><p><a class="reference external" href="https://osf.io/">https://osf.io/</a></p>
+</dd>
+<dt>DataUp</dt><dd><p><code class="docutils literal notranslate"><span class="pre">http://dataup.cdlib.org/</span></code></p>
+</dd>
+<dt>Authorea</dt><dd><p><a class="reference external" href="https://www.authorea.com/">https://www.authorea.com/</a></p>
+</dd>
+<dt>PubPeer (post publication peer review)</dt><dd><p><a class="reference external" href="https://pubpeer.com/">https://pubpeer.com/</a></p>
+</dd>
+<dt>PubMed Commons (post publication peer review)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">https://www.ncbi.nlm.nih.gov/pubmedcommons/</span></code> (discontinued, see
+<a class="reference external" href="https://ftp.ncbi.nlm.nih.gov/pubmed/pubmedcommons/README.txt">https://ftp.ncbi.nlm.nih.gov/pubmed/pubmedcommons/README.txt</a>)</p>
+</dd>
+<dt>CKAN (Open Source data portal platform)</dt><dd><p><a class="reference external" href="https://ckan.org/">https://ckan.org/</a></p>
+</dd>
+<dt>sciety (curated preprints)</dt><dd><p><a class="reference external" href="https://sciety.org/">https://sciety.org/</a></p>
+</dd>
+<dt>Peer Community in</dt><dd><p><a class="reference external" href="https://peercommunityin.org/">https://peercommunityin.org/</a></p>
+</dd>
+</dl>
+</section>
+<section id="journals">
+<h2>Journals<a class="headerlink" href="#journals" title="Link to this heading">§</a></h2>
+<dl class="simple">
+<dt>F1000Research (life sciences)</dt><dd><p><a class="reference external" href="https://f1000research.com/">https://f1000research.com/</a></p>
+</dd>
+<dt>Scientific Data - nature.com</dt><dd><p><a class="reference external" href="https://www.nature.com/sdata/">https://www.nature.com/sdata/</a></p>
+</dd>
+<dt>DRYAD</dt><dd><p><a class="reference external" href="https://datadryad.org/">https://datadryad.org/</a></p>
+</dd>
+<dt>The ReScience Journal</dt><dd><p><a class="reference external" href="http://rescience.github.io/">http://rescience.github.io/</a></p>
+</dd>
+<dt>Peer Community Journal</dt><dd><p><a class="reference external" href="https://peercommunityjournal.org/">https://peercommunityjournal.org/</a></p>
+</dd>
+</dl>
+</section>
+<section id="publications">
+<h2>Publications<a class="headerlink" href="#publications" title="Link to this heading">§</a></h2>
+<p>Patrick Vandewalle, Jelena Kovačević, Martin Vetterli,
+<a class="reference external" href="https://doi.org/10.1109/MSP.2009.932122">Reproducible Research in Signal Processing</a>,
+IEEE Signal Processing Magazine Volume 26, Issue 3, 2009.</p>
+<p>Robert Gentleman, Duncan Temple Lang,
+<a class="reference external" href="https://doi.org/10.1198/106186007X178663">Statistical Analyses and Reproducible Research</a>,
+Journal of Computational and Graphical Statistics Volume 16, Issue 1, 2007.</p>
+<p>Bruce G. Charlton,
+<a class="reference external" href="https://doi.org/10.1136/bmj.39304.581574.94">Peer usage versus peer review</a>,
+BMJ Volume 335, Issue 7617, 2007.</p>
+<p>Arturo Casadevall, Ferric C. Fang,
+<a class="reference external" href="https://doi.org/10.1128/IAI.00908-10">Reproducible Science</a>,
+Infection and Immunity Volume 78, Issue 12, 2010.</p>
+<p>Jonathan B. Buckheit, David L. Donoho,
+<a class="reference external" href="https://doi.org/10.1007/978-1-4612-2544-7_5">WaveLab and Reproducible Research</a>,
+in <a class="reference external" href="https://doi.org/10.1007/978-1-4612-2544-7">Wavelets and Statistics</a>,
+Springer, 1995.</p>
+<p>Darrel C. Ince, Leslie Hatton, John Graham-Cumming,
+<a class="reference external" href="https://doi.org/10.1038/nature10836">The Case for Open Computer Programs</a>,
+Nature Volume 482, 2012.</p>
+<p>Nature special <a class="reference external" href="https://web.archive.org/web/20170802213155/http://www.nature.com/news/reproducibility-1.17552">Challenges in Irreproducible Research</a>, 2010-2013.</p>
+<p>Fernando Pérez, Brian E. Granger, John D. Hunter,
+<a class="reference external" href="https://doi.org/10.1109/MCSE.2010.119">Python: An Ecosystem for Scientific Computing</a>,
+Computing in Science Engineering, Volume 13, Issue 2, 2011.</p>
+<p>Peter Suber,
+<a class="reference external" href="https://mitpress.mit.edu/books/open-access">Open Access</a>,
+MIT Press, 2012.</p>
+<p>Peter Suber,
+<a class="reference external" href="https://web.archive.org/web/20230810233553/https://dash.harvard.edu/bitstream/handle/1/4322580/suber_oagratis.html">Gratis and libre open access</a>,
+SPARC Open Access Newsletter, issue #124, 2008.</p>
+<p>Peter Suber,
+<a class="reference external" href="https://library.oapen.org/handle/20.500.12657/26045">Knowledge Unbound: Selected Writings on Open Access, 2002–2011</a>,
+MIT Press, 2016.</p>
+<p>John P. A. Ioannidis,
+<a class="reference external" href="https://doi.org/10.1371/journal.pmed.0020124">Why Most Published Research Findings Are False</a>,
+PLoS Med 2(8): e124. doi:10.1371/journal.pmed.0020124, 2005.</p>
+<p>Detailed comment to the above:
+<a class="reference external" href="http://matthew-brett.github.io/teaching/ioannidis_2005.html">http://matthew-brett.github.io/teaching/ioannidis_2005.html</a></p>
+<p>Chris Drummond,
+<a class="reference external" href="http://cogprints.org/7691/">Replicability is not Reproducibility: Nor is it Good Science</a>,
+Proc. of the Evaluation Methods for Machine
+Learning Workshop at the 26th ICML, 2009.</p>
+<p>Ian P. Gent,
+<a class="reference external" href="https://arxiv.org/abs/1304.3674v1">The Recomputation Manifesto</a>,
+Unpublished position paper, Version 1.9479, 2013.</p>
+<p>Michael Woelfle, Piero Olliaro, Matthew H. Todd,
+<a class="reference external" href="https://doi.org/10.1038/nchem.1149">Open science is a research accelerator</a>,
+Nature Chemistry, Volume 3, Issue 10, 2011.</p>
+<p>Radovan Vrana,
+<a class="reference external" href="https://doi.org/10.1109/MIPRO.2015.7160399">Open science, open access and open educational resources: Challenges and opportunities</a>,
+International Convention on Information and Communication Technology, Electronics and Microelectronics (MIPRO), 2015.</p>
+<p>Yale Law School Roundtable on Data and Code Sharing,
+<a class="reference external" href="https://doi.org/10.1109/MCSE.2010.113">Reproducible Research: Addressing the Need for Data and Code Sharing in Computational Science</a>,
+Computing in Science &amp; Engineering, Volume 12, Issue 5, 2010.</p>
+<p>Toronto International Data Release Workshop Authors,
+<a class="reference external" href="https://doi.org/10.1038/461168a">Prepublication Data Sharing</a>,
+Nature 461, no. 7261, 2009.</p>
+<p>Rinze Benedictus, Frank Miedema, and Mark W. J. Ferguson,
+<a class="reference external" href="https://doi.org/10.1038/538453a">Fewer Numbers, Better Science</a>,
+Nature News, Volume 538, Issue 7626, 2016.</p>
+<p>J. Wilsdon et al.,
+<a class="reference external" href="https://doi.org/10.13140/RG.2.1.4929.1363">The Metric Tide: Report of the Independent Review of the Role of
+Metrics in Research Assessment and Management</a>,
+2015.</p>
+<p>Barak A. Cohen,
+<a class="reference external" href="https://doi.org/10.7554/eLife.28699">Point of View: How should novelty be valued in science?</a>,
+2017.</p>
+<p>D. Cicchetti,
+<a class="reference external" href="https://doi.org/10.1017/S0140525X00065675">The reliability of peer review for manuscript and grant submissions: A
+cross-disciplinary investigation</a>,
+1991.</p>
+<p>J. Bollen et al.,
+<a class="reference external" href="https://doi.org/10.1002/embr.201338068">From funding agencies to scientific agency</a>,
+2014.</p>
+<p>J. Bollen et al.,
+<a class="reference external" href="https://doi.org/10.1007/s11192-016-2110-3">An efficient system to fund science: from proposal review to peer-to-peer
+distributions</a>,
+2017.</p>
+<p>B. Alberts et al.,
+<a class="reference external" href="https://doi.org/10.1126/science.aab3847">Self-Correction in Science at Work</a>,
+Science Vol. 348, Issue 6242, pp. 1420-1422,
+2015</p>
+<p>B. A. Nosek et al.,
+<a class="reference external" href="https://doi.org/10.1126/science.aab2374">Promoting an Open Research Culture</a>,
+Science Vol. 348, Issue 6242, pp. 1422-1425,
+2015</p>
+<p>Mary C. Murphy et al.,
+<a class="reference external" href="https://doi.org/10.1073/pnas.1921320117">Open science, communal culture, and women’s participation
+in the movement to improve science</a>,
+Proceedings of the National Academy of Sciences,
+2020</p>
+<p>Thomas H. Berquist,
+<a class="reference external" href="https://doi.org/10.2214/AJR.12.9256">Peer Review: Is the Process Broken?</a>,
+American Journal of Roentgenology, Volume 199, Issue 2,
+2012</p>
+<p>Melinda Baldwin,
+<a class="reference external" href="https://doi.org/10.34758/srde-jw27">Peer Review</a>,
+Encyclopedia of the History of Science
+2020</p>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading">§</a></h2>
+<dl>
+<dt>Coursera course about <em>Reproducible Research</em></dt><dd><p><a class="reference external" href="https://www.coursera.org/learn/reproducible-research">https://www.coursera.org/learn/reproducible-research</a></p>
+</dd>
+<dt>results may vary (slides for keynote at ISMB/ECCB 2013)</dt><dd><p><a class="reference external" href="https://www.slideshare.net/carolegoble/ismb2013-keynotecleangoble">https://www.slideshare.net/carolegoble/ismb2013-keynotecleangoble</a></p>
+</dd>
+<dt>Reproducibility in Computational Science (slides)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">https://web.stanford.edu/~vcs/talks/UMN-Oct102013-STODDEN.pdf</span></code></p>
+</dd>
+<dt>The Role of Data Repositories in Reproducible Research:</dt><dd><p><a class="reference external" href="https://isps.yale.edu/news/blog/2013/07/the-role-of-data-repositories-in-reproducible-research">https://isps.yale.edu/news/blog/2013/07/the-role-of-data-repositories-in-reproducible-research</a></p>
+</dd>
+<dt>#solo13lego: Research Roles Through Lego</dt><dd><p><a class="reference external" href="https://sophiekershaw.wordpress.com/2013/11/14/research-roles-through-lego/">https://sophiekershaw.wordpress.com/2013/11/14/research-roles-through-lego/</a></p>
+</dd>
+<dt>Reproducibility: An important altmetric</dt><dd><p><code class="docutils literal notranslate"><span class="pre">http://altmetrics.org/altmetrics12/iorns/</span></code></p>
+</dd>
+<dt>The Truth Wears Off: An odd twist in the scientific method</dt><dd><p><a class="reference external" href="https://www.newyorker.com/magazine/2010/12/13/the-truth-wears-off">https://www.newyorker.com/magazine/2010/12/13/the-truth-wears-off</a></p>
+</dd>
+<dt>Report reveals missteps in Duke cancer trial review</dt><dd><p><a class="reference external" href="http://blogs.nature.com/news/2011/01/report_reveals_missteps_in_ini.html">http://blogs.nature.com/news/2011/01/report_reveals_missteps_in_ini.html</a></p>
+</dd>
+<dt>Reproducible Research in Signal/Image Processing</dt><dd><p><a class="reference external" href="http://reproducibleresearch.net/">http://reproducibleresearch.net/</a></p>
+</dd>
+<dt>European Commission: <em>Towards better access to scientific information</em></dt><dd><p><a class="reference external" href="https://www.eesc.europa.eu/?i=portal.en.int-opinions.24976">https://www.eesc.europa.eu/?i=portal.en.int-opinions.24976</a> (<a class="reference external" href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=COM:2012:0401:FIN:EN:PDF">PDF</a>)</p>
+</dd>
+<dt>Preserving Research: The top online archives for storing your unpublished findings</dt><dd><p><a class="reference external" href="https://www.the-scientist.com/careers/preserving-research-38930">https://www.the-scientist.com/careers/preserving-research-38930</a></p>
+</dd>
+<dt>Post-Publication Peer Review Mainstreamed</dt><dd><p><a class="reference external" href="https://www.the-scientist.com/daily-news/post-publication-peer-review-mainstreamed-38529">https://www.the-scientist.com/daily-news/post-publication-peer-review-mainstreamed-38529</a></p>
+</dd>
+<dt>Offene Wissenschaft (de)</dt><dd><p><a class="reference external" href="https://web.archive.org/web/20180706043644/http://www.offene-wissenschaft.de/">https://web.archive.org/web/20180706043644/http://www.offene-wissenschaft.de/</a></p>
+</dd>
+<dt>mozilla Science Lab</dt><dd><p><a class="reference external" href="https://wiki.mozilla.org/ScienceLab">https://wiki.mozilla.org/ScienceLab</a></p>
+</dd>
+<dt>Panton Principles</dt><dd><p><a class="reference external" href="https://web.archive.org/web/20220921042649/https://pantonprinciples.org/">https://web.archive.org/web/20220921042649/https://pantonprinciples.org/</a></p>
+</dd>
+<dt>The Open Definition</dt><dd><p><a class="reference external" href="http://opendefinition.org/">http://opendefinition.org/</a></p>
+</dd>
+<dt>Guide to Open Data Licensing</dt><dd><p><a class="reference external" href="http://opendefinition.org/guide/data/">http://opendefinition.org/guide/data/</a></p>
+</dd>
+<dt>CC0</dt><dd><p><a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a></p>
+</dd>
+<dt>Joint Declaration of Data Citation Principles</dt><dd><p><a class="reference external" href="https://doi.org/10.25490/a97f-egyk">https://doi.org/10.25490/a97f-egyk</a></p>
+</dd>
+<dt>Madagascar</dt><dd><p><a class="reference external" href="http://www.ahay.org/wiki/Main_Page">http://www.ahay.org/wiki/Main_Page</a></p>
+</dd>
+<dt>Reproducibility Initiative</dt><dd><p><code class="docutils literal notranslate"><span class="pre">http://reproducibilityinitiative.org/</span></code></p>
+</dd>
+<dt>The Need for Openness in Data Journalism</dt><dd><p><a class="reference external" href="https://nbviewer.jupyter.org/github/brianckeegan/Bechdel/blob/master/Bechdel_test.ipynb">https://nbviewer.jupyter.org/github/brianckeegan/Bechdel/blob/master/Bechdel_test.ipynb</a></p>
+</dd>
+<dt>Guidelines for Open Educational Resources (OER) in Higher Education</dt><dd><p><code class="docutils literal notranslate"><span class="pre">http://www.unesco.org/new/en/communication-and-information/resources/publications-and-communication-materials/publications/full-list/guidelines-for-open-educational-resources-oer-in-higher-education/</span></code>
+<a class="reference external" href="http://oasis.col.org/handle/11599/60">http://oasis.col.org/handle/11599/60</a></p>
+</dd>
+<dt>10 Simple Rules for the Care and Feeding of Scientific Data</dt><dd><p><a class="reference external" href="https://www.authorea.com/users/3/articles/3410/_show_article">https://www.authorea.com/users/3/articles/3410/_show_article</a></p>
+</dd>
+<dt>Scientific Python Lectures:</dt><dd><p><a class="reference external" href="https://github.com/jrjohansson/scientific-python-lectures">https://github.com/jrjohansson/scientific-python-lectures</a></p>
+</dd>
+<dt>Research Objects</dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Research_Objects">https://en.wikipedia.org/wiki/Research_Objects</a></p>
+</dd>
+<dt>An efficient workflow for reproducible science (SciPy 2013)</dt><dd><p><a class="reference external" href="https://youtu.be/Y-XFNg0QS14">https://youtu.be/Y-XFNg0QS14</a></p>
+</dd>
+<dt>Open Glossary</dt><dd><p><a class="reference external" href="https://blogs.egu.eu/network/palaeoblog/files/2015/02/OpenGlossary1.pdf">https://blogs.egu.eu/network/palaeoblog/files/2015/02/OpenGlossary1.pdf</a></p>
+</dd>
+<dt>Open Access: Berlin Declaration</dt><dd><p><a class="reference external" href="https://openaccess.mpg.de/Berlin-Declaration">https://openaccess.mpg.de/Berlin-Declaration</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Berlin_Declaration_on_Open_Access_to_Knowledge_in_the_Sciences_and_Humanities">Wikipedia article</a></p>
+</dd>
+<dt>Reproducibility in Code and Science</dt><dd><p><a class="reference external" href="https://web.archive.org/web/20170903071534/http://justingosses.com/reproducibility/">https://web.archive.org/web/20170903071534/http://justingosses.com/reproducibility/</a></p>
+</dd>
+<dt>The 7 biggest problems facing science, according to 270 scientists</dt><dd><p><a class="reference external" href="https://www.vox.com/2016/7/14/12016710/science-challeges-research-funding-peer-review-process">https://www.vox.com/2016/7/14/12016710/science-challeges-research-funding-peer-review-process</a></p>
+</dd>
+<dt>Journal of Articles in Support of the Null Hypothesis</dt><dd><p><a class="reference external" href="https://www.jasnh.com/">https://www.jasnh.com/</a></p>
+</dd>
+<dt>The Transparency and Openness Promotion Guidelines</dt><dd><p><a class="reference external" href="https://www.cos.io/initiatives/top-guidelines">https://www.cos.io/initiatives/top-guidelines</a></p>
+</dd>
+<dt>épisciences</dt><dd><p><a class="reference external" href="https://www.episciences.org/">https://www.episciences.org/</a></p>
+</dd>
+<dt>The open archive HAL</dt><dd><p><a class="reference external" href="https://hal.archives-ouvertes.fr/">https://hal.archives-ouvertes.fr/</a></p>
+</dd>
+<dt>arXiv.org</dt><dd><p><a class="reference external" href="https://arxiv.org/">https://arxiv.org/</a></p>
+</dd>
+<dt>Directory of Open Access Journals (DOAJ)</dt><dd><p><a class="reference external" href="https://doaj.org/">https://doaj.org/</a></p>
+</dd>
+<dt>Amsterdam Call for Action on Open Science</dt><dd><p><a class="reference external" href="https://web.archive.org/web/20170619030655/https://english.eu2016.nl/documents/reports/2016/04/04/amsterdam-call-for-action-on-open-science">https://web.archive.org/web/20170619030655/https://english.eu2016.nl/documents/reports/2016/04/04/amsterdam-call-for-action-on-open-science</a></p>
+</dd>
+<dt>Reproducibility and reliability of biomedical research</dt><dd><p><a class="reference external" href="https://acmedsci.ac.uk/policy/policy-projects/reproducibility-and-reliability-of-biomedical-research/">https://acmedsci.ac.uk/policy/policy-projects/reproducibility-and-reliability-of-biomedical-research/</a></p>
+</dd>
+<dt>Rigor and Reproducibility (NIH guidelines)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">https://grants.nih.gov/reproducibility/index.htm</span></code></p>
+</dd>
+<dt>Analysis of meta-analyses identifies where sciences’ real problems lie</dt><dd><p><a class="reference external" href="https://arstechnica.com/science/2017/03/bias-in-science-small-samples-isolated-scientists-and-dodgy-individuals/">https://arstechnica.com/science/2017/03/bias-in-science-small-samples-isolated-scientists-and-dodgy-individuals/</a></p>
+</dd>
+<dt>Vienna Principles</dt><dd><p><a class="reference external" href="http://viennaprinciples.org/">http://viennaprinciples.org/</a></p>
+</dd>
+<dt>sciencecodemanifesto.org</dt><dd><p><a class="reference external" href="https://web.archive.org/web/20160218093215/http://sciencecodemanifesto.org/">https://web.archive.org/web/20160218093215/http://sciencecodemanifesto.org/</a></p>
+</dd>
+<dt>Peer Reviewers’ Openness Initiative</dt><dd><p><a class="reference external" href="https://www.opennessinitiative.org/">https://www.opennessinitiative.org/</a></p>
+</dd>
+<dt>Initiative for Open Citations</dt><dd><p><a class="reference external" href="https://i4oc.org/">https://i4oc.org/</a></p>
+</dd>
+<dt>Workshop: Reproducible Research using Jupyter Notebooks</dt><dd><p><a class="reference external" href="https://reproducible-science-curriculum.github.io/workshop-RR-Jupyter/">https://reproducible-science-curriculum.github.io/workshop-RR-Jupyter/</a></p>
+</dd>
+<dt>ACM Artifact Review and Badging</dt><dd><p><a class="reference external" href="https://www.acm.org/publications/policies/artifact-review-badging">https://www.acm.org/publications/policies/artifact-review-badging</a></p>
+</dd>
+<dt>Science is “show me,” not “trust me”</dt><dd><p><a class="reference external" href="https://www.bitss.org/science-is-show-me-not-trust-me/">https://www.bitss.org/science-is-show-me-not-trust-me/</a></p>
+</dd>
+<dt>An unhealthy obsession with p-values is ruining science</dt><dd><p><a class="reference external" href="https://www.vox.com/2016/3/15/11225162/p-value-simple-definition-hacking">https://www.vox.com/2016/3/15/11225162/p-value-simple-definition-hacking</a></p>
+</dd>
+<dt>The Irreproducibility Crisis of Modern Science: Causes, Consequences, and the Road to Reform</dt><dd><p><a class="reference external" href="https://www.nas.org/reports/the-irreproducibility-crisis-of-modern-science">https://www.nas.org/reports/the-irreproducibility-crisis-of-modern-science</a></p>
+<p><a class="reference external" href="https://www.nas.org/storage/app/media/Reports/Irreproducibility%20Crisis%20Report/NAS_irreproducibilityReport.pdf">https://www.nas.org/storage/app/media/Reports/Irreproducibility%20Crisis%20Report/NAS_irreproducibilityReport.pdf</a></p>
+</dd>
+<dt>Why I’ve lost faith in p values</dt><dd><p><a class="reference external" href="https://lucklab.ucdavis.edu/blog/2018/4/19/why-i-lost-faith-in-p-values">https://lucklab.ucdavis.edu/blog/2018/4/19/why-i-lost-faith-in-p-values</a></p>
+</dd>
+<dt>Budapest Open Access Initiative</dt><dd><p><a class="reference external" href="https://www.budapestopenaccessinitiative.org/">https://www.budapestopenaccessinitiative.org/</a></p>
+</dd>
+<dt>FAIR Principles (Findable, Accessible, Interoperable, Re-usable)</dt><dd><p><a class="reference external" href="https://www.nature.com/articles/sdata201618">https://www.nature.com/articles/sdata201618</a></p>
+<p><a class="reference external" href="https://www.go-fair.org/fair-principles/">https://www.go-fair.org/fair-principles/</a></p>
+<p><a class="reference external" href="https://www.force11.org/group/fairgroup/fairprinciples">https://www.force11.org/group/fairgroup/fairprinciples</a></p>
+<p><a class="reference external" href="https://www.force11.org/fairprinciples">https://www.force11.org/fairprinciples</a></p>
+</dd>
+<dt>The Turing Way: Guide for Reproducible Research</dt><dd><p><a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html">https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html</a></p>
+</dd>
+<dt>ASAPbio</dt><dd><p><a class="reference external" href="https://asapbio.org/">https://asapbio.org/</a></p>
+</dd>
+<dt>eLife’s New Model: Changing the way you share your research</dt><dd><p><a class="reference external" href="https://elifesciences.org/inside-elife/54d63486/elife-s-new-model-changing-the-way-you-share-your-research">https://elifesciences.org/inside-elife/54d63486/elife-s-new-model-changing-the-way-you-share-your-research</a></p>
+</dd>
+<dt>Project Free Our Knowledge</dt><dd><p><a class="reference external" href="https://freeourknowledge.org/">https://freeourknowledge.org/</a></p>
+</dd>
+<dt>EU Council calls for transparent, equitable, and open access to scholarly publications</dt><dd><p><a class="reference external" href="https://www.consilium.europa.eu/en/press/press-releases/2023/05/23/council-calls-for-transparent-equitable-and-open-access-to-scholarly-publications/">https://www.consilium.europa.eu/en/press/press-releases/2023/05/23/council-calls-for-transparent-equitable-and-open-access-to-scholarly-publications/</a></p>
+</dd>
+<dt>The Rise of Peer Review: Melinda Baldwin on the History of Refereeing at Scientific Journals and Funding Bodies</dt><dd><p><a class="reference external" href="https://scholarlykitchen.sspnet.org/2018/09/26/the-rise-of-peer-review-melinda-baldwin-on-the-history-of-refereeing-at-scientific-journals-and-funding-bodies/">https://scholarlykitchen.sspnet.org/2018/09/26/the-rise-of-peer-review-melinda-baldwin-on-the-history-of-refereeing-at-scientific-journals-and-funding-bodies/</a></p>
+</dd>
+<dt>Peer Review – A Historical Perspective</dt><dd><p><a class="reference external" href="https://mitcommlab.mit.edu/broad/commkit/peer-review-a-historical-perspective/">https://mitcommlab.mit.edu/broad/commkit/peer-review-a-historical-perspective/</a></p>
+</dd>
+<dt>The Birth of Modern Peer Review</dt><dd><p><a class="reference external" href="https://blogs.scientificamerican.com/information-culture/the-birth-of-modern-peer-review/">https://blogs.scientificamerican.com/information-culture/the-birth-of-modern-peer-review/</a></p>
+</dd>
+<dt>Is the staggeringly profitable business of scientific publishing bad for science?</dt><dd><p><a class="reference external" href="https://amp.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science">https://amp.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git.html">Getting Started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-jupyter.html">Jupyter Notebooks in a Git Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importing-local-python-modules-from-jupyter-notebooks/index.html">Importing Local Python Modules from Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-audio.html">Audio in Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducible Research</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openness">Openness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replicability-vs-reproducibility">Replicability vs. Reproducibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#guidelines">Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-should-be-reproducible">What Should be Reproducible?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#criticism">Criticism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software">Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#latex">LaTeX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git">Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-software">More Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#publication-tools">Publication Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#online-services">Online Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#journals">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publications">Publications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="open_education.html">Open Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="free_audio_data.html">Re-usable Audio Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Creating a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_tutorial/make_tutorial.html">Make Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latexmk.html">Using Latexmk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Getting Started with Sphinx and readthedocs.org</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">My Projects and Collaborations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotes.html">Quotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
+</ul>
+
+<div><hr class="docutils"></div>
+<ul>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="python-audio.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Audio in Python
+          </span>
+        </div>
+      </a>
+      <a class="next" href="open_education.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Open Education
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+<div class="articleComments">
+
+
+<script src="https://utteranc.es/client.js"
+        repo="mgeier/homepage"
+        issue-term="comments:reproducible_research"
+        label="comments"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</div>
+
+    <footer role="contentinfo">Dedicated to the public domain with
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+   class="reference external">CC0 1.0</a>.
+      Last updated on Nov 22, 2024.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>

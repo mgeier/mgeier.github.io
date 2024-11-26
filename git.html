@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2023-05-07T14:20:44+00:00" />
+    <title>Getting Started with Git &#8212; homepage</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css?v=b2d00be7" />
+
+    <script src="_static/documentation_options.js?v=98035ebd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Jupyter Notebooks in a Git Repository" href="git-jupyter.html" />
+    <link rel="prev" title="Welcome!" href="index.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">homepage</a>
+            <a class="top" href="#">Getting Started with Git</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="index.html" class="nav-icon previous" title="previous:&#13;Welcome!" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="git-jupyter.html" class="nav-icon next" title="next:&#13;Jupyter Notebooks in a Git Repository" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="index.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Welcome!
+          </span>
+        </div>
+      </a>
+      <a class="next" href="git-jupyter.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Jupyter Notebooks in a Git Repository
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="getting-started-with-git">
+<h1>Getting Started with Git<a class="headerlink" href="#getting-started-with-git" title="Link to this heading">§</a></h1>
+<p>There are a lot of pages on the web dedicated to Git, this page just shows a few
+random bits of information which might or might not help you getting started.</p>
+<p>Git is a distributed version control system (DVCS) and it’s great!</p>
+<p>That’s about all I’m gonna say about it in general, if you want to read more
+about it, have a look at the links at the end of this page.</p>
+<section id="cloning-a-repository">
+<h2>Cloning a Repository<a class="headerlink" href="#cloning-a-repository" title="Link to this heading">§</a></h2>
+<p>To obtain the contents of a remote repository, you have to <em>clone</em> it.
+For example, to clone the repository where this very page was created from, do:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mgeier/homepage.git
+</pre></div>
+</div>
+<p>This will create a directory named like the repository (in this case
+<code class="file docutils literal notranslate"><span class="pre">homepage/</span></code>).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>homepage
+</pre></div>
+</div>
+</section>
+<section id="checking-the-status">
+<h2>Checking the Status<a class="headerlink" href="#checking-the-status" title="Link to this heading">§</a></h2>
+<p>At any time, you can get the current status of your files with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>Here you will see if there are changes to any files of the repository and if
+there are local files which are not yet part of the repository (see below for
+how to add files).</p>
+</section>
+<section id="getting-recent-changes-from-the-server">
+<h2>Getting Recent Changes from the Server<a class="headerlink" href="#getting-recent-changes-from-the-server" title="Link to this heading">§</a></h2>
+<p>If the repository on the server changed since you cloned it, you can get up to
+date with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<p>But be aware that if you made changes to your local files, this may lead to
+conflicts. It’s a good idea to always commit before pulling (see below how to
+commit changes).</p>
+</section>
+<section id="initial-setup">
+<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading">§</a></h2>
+<p>Before you make your first commit, you should set up a few things (you have to
+do this only once):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>you@example.com
+</pre></div>
+</div>
+<p>You may also want to set your favorite editor:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;gvim --nofork&quot;</span>
+</pre></div>
+</div>
+<p>To enable colors in <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> et al.:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span>auto
+</pre></div>
+</div>
+<p>And, if you want, you can set a few aliases for your convenience:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.s<span class="w"> </span><span class="s2">&quot;status --short&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.c<span class="w"> </span><span class="s2">&quot;checkout&quot;</span>
+
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.lol<span class="w"> </span><span class="s2">&quot;log --oneline --graph --decorate&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.lola<span class="w"> </span><span class="s2">&quot;log --oneline --graph --decorate --all&quot;</span>
+</pre></div>
+</div>
+<p>With these aliases, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">s</span></code> to get a short status display (one
+line per file) and you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">c</span> <span class="pre">mybranch</span></code> instead of the significantly
+longer <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">mybranch</span></code>.
+I find myself using <em>checkout</em> very often, so <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">c</span></code> saves a lot of typing.</p>
+<p>If you type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">lola</span></code>, you’ll see a nice and colorful ASCII display of the
+previous commits and their tree structure.</p>
+<p>All these options are stored in <code class="file docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> (or somewhere else
+depending on your operating system).
+You can also store settings on a per-project basis. Just drop the <code class="docutils literal notranslate"><span class="pre">--global</span></code>
+option and the settings will be stored for your current Git repository in
+<code class="docutils literal notranslate"><span class="pre">.git/config</span></code>.</p>
+</section>
+<section id="command-line-prompt">
+<h2>Command Line Prompt<a class="headerlink" href="#command-line-prompt" title="Link to this heading">§</a></h2>
+<p>When working with branches, it is crucial to know the currently active branch.
+To show the current branch in the command line prompt, put this at the end of
+your <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> (or wherever else you store settings for your shell):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># add git branch to prompt</span>
+<span class="nv">GIT_PS1_SHOWDIRTYSTATE</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PS1</span><span class="p">%</span><span class="s1">&#39;\$ &#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;$(__git_ps1 &quot; (%s)&quot;)&#39;</span><span class="s2">&quot;\$ &quot;</span>
+</pre></div>
+</div>
+<p>You’ll also see an asterisk, e.g. <code class="docutils literal notranslate"><span class="pre">(master</span> <span class="pre">*)</span></code>, if your working directory is
+<em>dirty</em>, i.e. if you have local changes which are not yet committed.</p>
+</section>
+<section id="committing-changes">
+<h2>Committing Changes<a class="headerlink" href="#committing-changes" title="Link to this heading">§</a></h2>
+<p>Any new files have to be added to Git control before you can do anything with
+them:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+</pre></div>
+</div>
+<p>Once you have done some changes, you can make a commit:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a
+</pre></div>
+</div>
+<p>Here, your favorite text editor will be opened and you can (and <em>should</em>!) enter
+a commit message, describing the changes you have made. After you save the
+file and close the editor, the commit will actually be created.</p>
+<p>A commit message should have a short (no more than 50 characters) one-line
+summary in the first line, then a blank line and then a more detailed
+description. Have a look at this <a class="reference external" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">note about commit messages</a>.</p>
+<p>Remember, a commit is a local operation in Git, so nothing was transferred to
+the server yet.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>add before commit, staging area, local commits</p>
+</div>
+</section>
+<section id="pushing-your-changes-to-the-server">
+<h2>Pushing Your Changes to the Server<a class="headerlink" href="#pushing-your-changes-to-the-server" title="Link to this heading">§</a></h2>
+<p>After one or several commits, you can push everything to the server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>If you created a new online repository and cloned the empty repository, you
+have to use this command the first time to set up the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<p>After that, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> will suffice.</p>
+</section>
+<section id="creating-and-switching-branches">
+<h2>Creating and Switching Branches<a class="headerlink" href="#creating-and-switching-branches" title="Link to this heading">§</a></h2>
+<p>But you probably don’t want to do that yet. You’re probably not quite sure yet
+if your changes are OK and you would like to wait with pushing them to the
+<code class="docutils literal notranslate"><span class="pre">master</span></code> branch. Probably you would like your colleagues to have a look at
+your changes first.</p>
+<p>That’s where <em>branches</em> come into the picture.</p>
+<p>To see what branches you already have, type:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<p>You’ll probably get something like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span>master
+</pre></div>
+</div>
+<p>This means you have only one branch which is called <code class="docutils literal notranslate"><span class="pre">master</span></code>. This is
+typically the default branch and most repositories have it but it is just a
+branch as any other branch.
+The asterisk marks the currently active branch.
+You should also see this in your prompt if you did what I suggested in <a class="reference internal" href="#command-line-prompt">Command
+Line Prompt</a>.</p>
+<p>You can switch between branches with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>. But you don’t have
+another branch to switch to … so let’s create one:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix-typo
+</pre></div>
+</div>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-b</span></code> combines creating a branch with directly switching to the
+newly created branch.</p>
+<p>Your local files didn’t actually change by switching to the new branch because
+for now, the branches <code class="docutils literal notranslate"><span class="pre">fix-typo</span></code> and <code class="docutils literal notranslate"><span class="pre">master</span></code> are just two different names
+for the same thing.
+But if you now start committing changes, these commits will end up in the
+<code class="docutils literal notranslate"><span class="pre">fix-typo</span></code> branch while the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch will remain unchanged.</p>
+<p>Let’s check our branch-related situation:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<p>Which produces something like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span>fix-typo
+<span class="w">  </span>master
+</pre></div>
+</div>
+<p>Now you can actually change something and then commit your changes:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>more about branches?</p>
+</div>
+</section>
+<section id="merging-branches">
+<h2>Merging Branches<a class="headerlink" href="#merging-branches" title="Link to this heading">§</a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>more information about merging and potential merge conflicts</p>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span></code> is really useful!</p>
+</div>
+<p>Setting up <a class="reference external" href="https://www.vim.org/">Vim</a> + <a class="reference external" href="https://github.com/tpope/vim-fugitive/">fugitive</a> as <code class="docutils literal notranslate"><span class="pre">mergetool</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>mergetool.fugitive.cmd<span class="w"> </span><span class="s1">&#39;gvim -f -c &quot;Gdiff&quot; &quot;$MERGED&quot;&#39;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.tool<span class="w"> </span>fugitive
+</pre></div>
+</div>
+<p>On <em>macOS</em>, you can use <em>FileMerge</em> (you need to have <em>Xcode</em> installed):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.tool<span class="w"> </span>opendiff
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>more advertisement for Vim and fugitive!</p>
+</div>
+</section>
+<section id="more-aliases">
+<h2>More Aliases<a class="headerlink" href="#more-aliases" title="Link to this heading">§</a></h2>
+<p>Once you’ve worked some time with Git, you will realize that there are a few
+commands that you use very often.  It’s easy to create aliases that make you
+type less.</p>
+<p>I, for example, often use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code> and afterwards I want to ensure that a
+<em>fast forward</em> merge is done (instead of a separate <em>merge commit</em>).
+Therefore, I have to type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">mybranch</span> <span class="pre">--ff-only</span></code>, which is quite long
+and tedious to type.  With the following alias, I can reduce this to
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ff</span> <span class="pre">mybranch</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.ff<span class="w"> </span><span class="s2">&quot;merge --ff-only&quot;</span>
+</pre></div>
+</div>
+<p>Sometimes, after a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">update</span></code>, I want to
+fast-forward my local branch to its newly fetched remote branch.
+With my previous alias, I could do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ff</span> <span class="pre">origin/mybranch</span></code>.  This is still
+too long, and Git should be able to automatically figure out which is the
+correct remote branch.  With the following alias, the command is reduced to
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ffu</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.ffu<span class="w"> </span><span class="s2">&quot;merge --ff-only @{upstream}&quot;</span>
+</pre></div>
+</div>
+<p>I seldom use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, because if there are new commits on both upstream and
+locally, a <em>merge commit</em> will be created automatically. And I don’t like that.
+To avoid a merge commit and to only actually merge if a merge commit can be
+avoided (i.e. if a <em>fast forward</em> merge is possible), we can again use the
+option <code class="docutils literal notranslate"><span class="pre">--ff-only</span></code>.  With the following alias, I only have to type
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pff</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.pff<span class="w"> </span><span class="s2">&quot;pull --ff-only --prune&quot;</span>
+</pre></div>
+</div>
+<p>The additional <code class="docutils literal notranslate"><span class="pre">--prune</span></code> option is very handy because it removes the remote
+branches which were deleted on the server (which is not done automatically).</p>
+</section>
+<section id="ignoring-local-files">
+<h2>Ignoring Local Files<a class="headerlink" href="#ignoring-local-files" title="Link to this heading">§</a></h2>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p><code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code>, global ignore file with <code class="docutils literal notranslate"><span class="pre">core.excludesfile</span></code>,
+reference to <a class="reference external" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+</div>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">§</a></h2>
+<p>You can set per-file (or per-path) attributes if you create a file named
+<code class="file docutils literal notranslate"><span class="pre">.gitattributes</span></code>, for example like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*.bib diff=bibtex
+*.cpp diff=cpp
+*.h diff=cpp
+*.htm diff=html
+*.html diff=html
+*.java diff=java
+*.php diff=php
+*.py diff=python
+*.rb diff=ruby
+*.tex diff=tex
+*.pbxproj binary
+</pre></div>
+</div>
+</section>
+<section id="guis-for-git">
+<h2>GUIs for Git<a class="headerlink" href="#guis-for-git" title="Link to this heading">§</a></h2>
+<p>There are many GUIs for Git to choose from; I personally like <em>gitg</em> (available
+as Debian package with the same name) most but there are many more available
+(see <a class="reference external" href="https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a>).</p>
+</section>
+<section id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Link to this heading">§</a></h2>
+<p>To get help just use:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span><span class="nb">help</span>
+</pre></div>
+</div>
+<p>You’ll get something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+See &#39;git help &lt;command&gt;&#39; or &#39;git help &lt;concept&gt;&#39; to read about a specific
+subcommand or concept.
+</pre></div>
+</div>
+</section>
+<section id="git-and-subversion-svn">
+<h2>Git and Subversion (SVN)<a class="headerlink" href="#git-and-subversion-svn" title="Link to this heading">§</a></h2>
+<p>See <a class="reference external" href="https://git-scm.com/book/en/v2/Git-and-Other-Systems-Git-as-a-Client#_git_svn">https://git-scm.com/book/en/v2/Git-and-Other-Systems-Git-as-a-Client#_git_svn</a></p>
+</section>
+<section id="public-git-hosting-sites">
+<h2>Public Git Hosting Sites<a class="headerlink" href="#public-git-hosting-sites" title="Link to this heading">§</a></h2>
+<p>There are several free Git hosting services available, for an overview visit
+<a class="reference external" href="https://git.wiki.kernel.org/index.php/GitHosting">https://git.wiki.kernel.org/index.php/GitHosting</a></p>
+</section>
+<section id="more-documentation-links">
+<h2>More Documentation/Links<a class="headerlink" href="#more-documentation-links" title="Link to this heading">§</a></h2>
+<ul class="simple">
+<li><p>The Pro Git Book (CC license): <a class="reference external" href="https://book.git-scm.com/">https://book.git-scm.com/</a></p></li>
+<li><p>Understanding Git Conceptually: <a class="reference external" href="https://www.sbf5.com/~cduan/technical/git/">https://www.sbf5.com/~cduan/technical/git/</a></p></li>
+<li><p>Git Quick Reference: <code class="docutils literal notranslate"><span class="pre">http://jonas.nitro.dk/git/quick-reference.html</span></code></p></li>
+<li><p>Git Immersion: <a class="reference external" href="https://gitimmersion.com/">https://gitimmersion.com/</a></p></li>
+<li><p>…</p></li>
+</ul>
+<p>There are many different strategies and methodologies how to use Git, just have a look with your favorite search engine or try this:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">https://nvie.com/posts/a-successful-git-branching-model/</a></p></li>
+<li><p><a class="reference external" href="https://betterexplained.com/articles/aha-moments-when-learning-git/">https://betterexplained.com/articles/aha-moments-when-learning-git/</a></p></li>
+<li><p><a class="reference external" href="http://sethrobertson.github.io/GitBestPractices/">http://sethrobertson.github.io/GitBestPractices/</a></p></li>
+<li><p>…</p></li>
+</ul>
+<p>There are also some nice videos:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>beginner</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=4XpnKHJAok8">https://www.youtube.com/watch?v=4XpnKHJAok8</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ZDR433b0HJY">https://www.youtube.com/watch?v=ZDR433b0HJY</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=GYnOwPl8yCE">https://www.youtube.com/watch?v=GYnOwPl8yCE</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>intermediate</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Z2ZL14WWEJI">https://www.youtube.com/watch?v=Z2ZL14WWEJI</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">§</a></h2>
+<p>I probably should write about these, too:</p>
+<ul class="simple">
+<li><p>pushing and pulling branches</p></li>
+<li><p>adding remotes</p></li>
+<li><p>merging</p></li>
+<li><p>rebasing (see <a class="reference external" href="https://git-rebase.io/">https://git-rebase.io/</a>)</p></li>
+<li><p>interactive rebasing</p></li>
+<li><p>cherry-picking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code></p></li>
+</ul>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started with Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-a-repository">Cloning a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-the-status">Checking the Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-recent-changes-from-the-server">Getting Recent Changes from the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-prompt">Command Line Prompt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#committing-changes">Committing Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pushing-your-changes-to-the-server">Pushing Your Changes to the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-and-switching-branches">Creating and Switching Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merging-branches">Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-aliases">More Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ignoring-local-files">Ignoring Local Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guis-for-git">GUIs for Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-and-subversion-svn">Git and Subversion (SVN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#public-git-hosting-sites">Public Git Hosting Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-documentation-links">More Documentation/Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#todo">TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-jupyter.html">Jupyter Notebooks in a Git Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importing-local-python-modules-from-jupyter-notebooks/index.html">Importing Local Python Modules from Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-audio.html">Audio in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reproducible_research.html">Reproducible Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_education.html">Open Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="free_audio_data.html">Re-usable Audio Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Creating a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_tutorial/make_tutorial.html">Make Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latexmk.html">Using Latexmk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Getting Started with Sphinx and readthedocs.org</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">My Projects and Collaborations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotes.html">Quotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
+</ul>
+
+<div><hr class="docutils"></div>
+<ul>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="index.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Welcome!
+          </span>
+        </div>
+      </a>
+      <a class="next" href="git-jupyter.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Jupyter Notebooks in a Git Repository
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+<div class="articleComments">
+
+
+<script src="https://utteranc.es/client.js"
+        repo="mgeier/homepage"
+        issue-term="comments:git"
+        label="comments"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</div>
+
+    <footer role="contentinfo">Dedicated to the public domain with
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+   class="reference external">CC0 1.0</a>.
+      Last updated on May 07, 2023.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>

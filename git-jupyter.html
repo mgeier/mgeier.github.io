@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2020-11-29T18:06:03+00:00" />
+    <title>Jupyter Notebooks in a Git Repository &#8212; homepage</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css?v=b2d00be7" />
+
+    <script src="_static/documentation_options.js?v=98035ebd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Importing Local Python Modules from Jupyter Notebooks" href="importing-local-python-modules-from-jupyter-notebooks/index.html" />
+    <link rel="prev" title="Getting Started with Git" href="git.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">homepage</a>
+            <a class="top" href="#">Jupyter Notebooks in a Git Repository</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="git.html" class="nav-icon previous" title="previous:&#13;Getting Started with Git" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="importing-local-python-modules-from-jupyter-notebooks/index.html" class="nav-icon next" title="next:&#13;Importing Local Python Modules from Jupyter Notebooks" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="git.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Getting Started with Git
+          </span>
+        </div>
+      </a>
+      <a class="next" href="importing-local-python-modules-from-jupyter-notebooks/index.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Importing Local Python Modules from Jupyter Notebooks
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="jupyter-notebooks-in-a-git-repository">
+<h1>Jupyter Notebooks in a Git Repository<a class="headerlink" href="#jupyter-notebooks-in-a-git-repository" title="Link to this heading">§</a></h1>
+<p>It is a very nice feature of <a class="reference external" href="https://jupyter.org/">Jupyter</a> notebooks that cell outputs
+(e.g. images, plots, tables with data) can be stored within notebooks.
+This makes it very easy to share notebooks with other people,
+who can open the notebooks and can immediately see the results,
+without having to execute the notebook
+(which might have some complicated library or data dependencies,
+or it might simply take a long time to run).</p>
+<p>However, those cell outputs can be very annoying when using a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Version_control">version control system</a> like e.g. <a class="reference external" href="https://git-scm.com/">Git</a>.
+Whenever a change is made to a code cell,
+most likely the cell’s output will also change.
+The problem is that both changes will be shown in a “diff” view,
+but the (often much larger) changes in outputs
+will distract from the much more interesting changes in the code.
+This can make it very tedious to work on a notebook with multiple people.</p>
+<p>To avoid this problem, it is recommended to strip all outputs from a notebook
+before committing it to Git.</p>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>clean/smudge filters
+(<a class="reference external" href="https://nbsphinx.readthedocs.io/en/latest/usage.html#Using-Notebooks-with-Git">https://nbsphinx.readthedocs.io/en/latest/usage.html#Using-Notebooks-with-Git</a>)</p>
+</div>
+<p>There is a catch, though.
+If you don’t commit the cell outputs,
+other people looking at your repository don’t see the outputs
+(unless they execute the notebooks on their own).
+But don’t worry,
+the next two sections will show two ways to work with “clean” notebooks
+but still to be able to share the cell outputs publicly.</p>
+<section id="executing-notebooks-on-a-server">
+<h2>Executing Notebooks on a Server<a class="headerlink" href="#executing-notebooks-on-a-server" title="Link to this heading">§</a></h2>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p><a class="reference external" href="https://nbsphinx.readthedocs.io/">https://nbsphinx.readthedocs.io/</a> and others</p>
+</div>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>advantages, disadvantages</p>
+</div>
+</section>
+<section id="executing-notebooks-in-a-separate-branch">
+<h2>Executing Notebooks in a Separate Branch<a class="headerlink" href="#executing-notebooks-in-a-separate-branch" title="Link to this heading">§</a></h2>
+<p>In this scenario,
+you and your collaborators mainly work on the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch
+(never committing cell outputs),
+and the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch only contains a single additional commit
+in which all notebooks are executed.</p>
+<p>If you want to use pull requests for collaboration,
+those should always be based upon the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch.</p>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>advantages, disadvantages</p>
+</div>
+<section id="getting-started-from-scratch">
+<h3>Getting Started from Scratch<a class="headerlink" href="#getting-started-from-scratch" title="Link to this heading">§</a></h3>
+<p>This assumes that you have no Jupyter notebooks in your repository yet
+or all your notebooks are “clean” (i.e. stored without outputs).</p>
+<ol class="arabic">
+<li><p>Make sure there are no un-committed (and un-pushed) local changes</p></li>
+<li><p>Create a new branch called <code class="docutils literal notranslate"><span class="pre">dev</span></code> (starting at the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch) and
+switch to the new branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span>master
+</pre></div>
+</div>
+</li>
+<li><p>Push the new <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch to the server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span>dev
+</pre></div>
+</div>
+</li>
+<li><p>If you already have some notebooks, you can execute them now in the
+<code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+</pre></div>
+</div>
+<p>You can execute the notebooks one by one,
+or all at once, as described in <a class="reference internal" href="#executing-all-notebooks">Executing All Notebooks</a>.
+Once all the notebooks you want to execute are executed,
+commit the changes to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Execute notebooks&quot;</span>
+</pre></div>
+</div>
+<p>And if everything looks OK, you can push the new commit to the server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ol>
+<p>That’s it!</p>
+<p>When you want to start changing existing notebooks,
+continue with the section <a class="reference internal" href="#making-a-change">Making a Change</a>.</p>
+</section>
+<section id="getting-started-with-pre-executed-notebooks">
+<h3>Getting Started with Pre-executed Notebooks<a class="headerlink" href="#getting-started-with-pre-executed-notebooks" title="Link to this heading">§</a></h3>
+<p>Don’t worry if you have previously committed notebooks
+without stripping their outputs.
+There is still a way of getting rid of them retroactively
+by re-writing your Git history.</p>
+<ol class="arabic">
+<li><p>Make sure there are no un-committed (and un-pushed) local changes</p></li>
+<li><p>Create a new branch called <code class="docutils literal notranslate"><span class="pre">dev</span></code> (starting at the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch) and
+switch to the new branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span>master
+</pre></div>
+</div>
+</li>
+<li><p>Do the steps listed in the section <a class="reference internal" href="#cleaning-a-whole-repository">Cleaning a Whole Repository</a></p></li>
+<li><p>Push the changes from the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch to the server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span>dev
+</pre></div>
+</div>
+</li>
+<li><p>Switch back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and make a backup branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>branch<span class="w"> </span>backup
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you think you might need it later (or if you are somewhat paranoid),
+you can also push the new <code class="docutils literal notranslate"><span class="pre">backup</span></code> branch to the server.</p>
+</div>
+</li>
+<li><p>Reset the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch to point to the same commit as <code class="docutils literal notranslate"><span class="pre">dev</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>reset<span class="w"> </span>dev<span class="w"> </span>--hard
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>With this step you throw away all your old commits!
+But you can still use the <code class="docutils literal notranslate"><span class="pre">backup</span></code> branch to get them back.</p>
+</div>
+</li>
+<li><p>Get the executed version of all notebooks (don’t forget the dot!):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>backup<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Create a new commit with a commit message like “Execute notebooks”:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Execute notebooks&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>If you are satisfied with the result,
+you can push your changes to the server,
+but note that you have to use <code class="docutils literal notranslate"><span class="pre">--force</span></code>,
+because you changed the Git history:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--force
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At this point, you are deleting all your old commits from the server!
+If you want to keep them, you should also push the <code class="docutils literal notranslate"><span class="pre">backup</span></code> branch.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="making-a-change">
+<h3>Making a Change<a class="headerlink" href="#making-a-change" title="Link to this heading">§</a></h3>
+<ol class="arabic">
+<li><p>Switch to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>dev
+</pre></div>
+</div>
+</li>
+<li><p>Work on your notebooks</p></li>
+<li><p>Create one or more commits with new notebooks or changes to existing ones</p></li>
+<li><p>Push the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch to the server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+<li><p>Switch to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and re-base it onto <code class="docutils literal notranslate"><span class="pre">dev</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>rebase<span class="w"> </span>-X<span class="w"> </span>ours<span class="w"> </span>dev
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">-X</span> <span class="pre">ours</span></code> selects a merging strategy where
+the changes to <code class="docutils literal notranslate"><span class="pre">dev</span></code> are preferred over the changes to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+</div>
+<p>Special care has to be taken before re-basing when notebooks are removed:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>rm<span class="w"> </span>the-deleted-notebook.ipynb<span class="w"> </span>the-other-deleted-notebook.ipynb
+git<span class="w"> </span>commit<span class="w"> </span>--amend
+git<span class="w"> </span>rebase<span class="w"> </span>-X<span class="w"> </span>ours<span class="w"> </span>dev
+</pre></div>
+</div>
+</li>
+<li><p>Manually (re-)run the changed (and any new) notebooks.</p>
+<p>You can execute the notebooks in the Jupyter application,
+or you can execute them with <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--execute<span class="w"> </span>--inplace<span class="w"> </span>my-notebook.ipynb<span class="w"> </span>my-other-notebook.ipynb
+</pre></div>
+</div>
+<p>If you have many notebooks, it might be hard to keep in mind
+which ones you have changed.
+To get list of changed notebooks (but also other changed files),
+you can use this command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>--name-only<span class="w"> </span>dev<span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>merge-base<span class="w"> </span>dev<span class="w"> </span>origin/master<span class="k">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>When all changed notebooks have been executed,
+you can update the “Execute notebooks” commit:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>--amend
+</pre></div>
+</div>
+</li>
+<li><p>In the end, the changes to <code class="docutils literal notranslate"><span class="pre">master</span></code> have to be force-pushed:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--force
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Normally</em>, you should <em>never</em> use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--force</span></code>
+on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.
+However, this is a special case where it’s OK,
+because all actual work will be done on the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch.
+This means that you should <em>never</em> use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--force</span></code>
+on the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch!</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="executing-all-notebooks">
+<h2>Executing All Notebooks<a class="headerlink" href="#executing-all-notebooks" title="Link to this heading">§</a></h2>
+<p>To execute all notebooks (whether they have outputs in them or not),
+you can use:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--execute<span class="w"> </span>--inplace<span class="w"> </span>*.ipynb<span class="w"> </span>**/*.ipynb
+</pre></div>
+</div>
+<p>To disable the timeout, add <code class="docutils literal notranslate"><span class="pre">--ExecutePreprocessor.timeout=-1</span></code> to the command.
+This should actually be the default, but it’s not,
+see <a class="reference external" href="https://github.com/jupyter/nbconvert/issues/791">https://github.com/jupyter/nbconvert/issues/791</a>.</p>
+<p>Please note the two <em>globbing</em> patterns used here.
+The second pattern (<code class="docutils literal notranslate"><span class="pre">**/*.ipynb</span></code>) is collecting all the notebooks recursively,
+but it doesn’t include the files in the current directory.
+That’s what the first pattern (<code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code>) is used for.
+If you don’t have notebooks in the main directory, you should omit this pattern.</p>
+<p>In a future release of <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> the second pattern might become superfluous.</p>
+</section>
+<section id="cleaning-all-notebooks">
+<h2>Cleaning All Notebooks<a class="headerlink" href="#cleaning-all-notebooks" title="Link to this heading">§</a></h2>
+<p>Removing outputs from all notebooks should work with this command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--clear-output<span class="w"> </span>*.ipynb<span class="w"> </span>**/*.ipynb
+</pre></div>
+</div>
+<p>… except that <code class="docutils literal notranslate"><span class="pre">--clear-output</span></code> is currently broken,
+see <a class="reference external" href="https://github.com/jupyter/nbconvert/issues/822">https://github.com/jupyter/nbconvert/issues/822</a>.</p>
+<p>It should work with the slightly more verbose:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--ClearOutputPreprocessor.enabled<span class="o">=</span>True<span class="w"> </span>--inplace<span class="w"> </span>*.ipynb<span class="w"> </span>**/*.ipynb
+</pre></div>
+</div>
+</section>
+<section id="cleaning-a-whole-repository">
+<h2>Cleaning a Whole Repository<a class="headerlink" href="#cleaning-a-whole-repository" title="Link to this heading">§</a></h2>
+<p>Make sure you don’t have any local changes and no un-committed files!</p>
+<p>You might want to create a new branch (and switch to it) before doing this!</p>
+<p>Cleaning the whole Git history of the current branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>filter-branch<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s2">&quot;python3 -m nbconvert --ClearOutputPreprocessor.enabled=True --inplace *.ipynb **/*.ipynb&quot;</span>
+</pre></div>
+</div>
+<p>If there are some commits without Jupyter notebook in them, you might want to
+extend the command a bit (to ignore any errors):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>filter-branch<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s2">&quot;python3 -m nbconvert --ClearOutputPreprocessor.enabled=True --inplace *.ipynb **/*.ipynb || true&quot;</span>
+</pre></div>
+</div>
+<p>Depending on the size of your repository and the number of commits,
+this might take a while …</p>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git.html">Getting Started with Git</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jupyter Notebooks in a Git Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#executing-notebooks-on-a-server">Executing Notebooks on a Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executing-notebooks-in-a-separate-branch">Executing Notebooks in a Separate Branch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-from-scratch">Getting Started from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-with-pre-executed-notebooks">Getting Started with Pre-executed Notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-a-change">Making a Change</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#executing-all-notebooks">Executing All Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-all-notebooks">Cleaning All Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-a-whole-repository">Cleaning a Whole Repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="importing-local-python-modules-from-jupyter-notebooks/index.html">Importing Local Python Modules from Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-audio.html">Audio in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reproducible_research.html">Reproducible Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_education.html">Open Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="free_audio_data.html">Re-usable Audio Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Creating a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_tutorial/make_tutorial.html">Make Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latexmk.html">Using Latexmk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Getting Started with Sphinx and readthedocs.org</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">My Projects and Collaborations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotes.html">Quotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
+</ul>
+
+<div><hr class="docutils"></div>
+<ul>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="git.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Getting Started with Git
+          </span>
+        </div>
+      </a>
+      <a class="next" href="importing-local-python-modules-from-jupyter-notebooks/index.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Importing Local Python Modules from Jupyter Notebooks
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+<div class="articleComments">
+
+
+<script src="https://utteranc.es/client.js"
+        repo="mgeier/homepage"
+        issue-term="comments:git_jupyter"
+        label="comments"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</div>
+
+    <footer role="contentinfo">Dedicated to the public domain with
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+   class="reference external">CC0 1.0</a>.
+      Last updated on Nov 29, 2020.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2023-08-27T09:50:45+00:00" />
+    <title>Using Latexmk &#8212; homepage</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css?v=b2d00be7" />
+
+    <script src="_static/documentation_options.js?v=98035ebd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started with Sphinx and readthedocs.org" href="sphinx.html" />
+    <link rel="prev" title="Make Tutorial" href="make_tutorial/make_tutorial.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">homepage</a>
+            <a class="top" href="#">Using Latexmk</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="make_tutorial/make_tutorial.html" class="nav-icon previous" title="previous:&#13;Make Tutorial" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="sphinx.html" class="nav-icon next" title="next:&#13;Getting Started with Sphinx and readthedocs.org" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="make_tutorial/make_tutorial.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Make Tutorial
+          </span>
+        </div>
+      </a>
+      <a class="next" href="sphinx.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Getting Started with Sphinx and readthedocs.org
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="using-latexmk">
+<h1>Using Latexmk<a class="headerlink" href="#using-latexmk" title="Link to this heading">§</a></h1>
+<p>If you use cross-references, you often have to run LaTeX more than once, if you
+use BibTeX for your bibliography or if you want to have a glossary you even need
+to run external programs in-between.</p>
+<p>To avoid all this hassle, you should simply use <a class="reference external" href="https://www.cantab.net/users/johncollins/latexmk/">Latexmk</a>!</p>
+<p><a class="reference external" href="https://www.cantab.net/users/johncollins/latexmk/">Latexmk</a> is a <a class="reference external" href="https://www.perl.org/">Perl</a> script which you just have to run once and it does
+everything else for you … completely automagically.</p>
+<p>And the nice thing is: you probably have it already installed on your computer,
+because it is part of <a class="reference external" href="http://www.tug.org/mactex/">MacTeX</a> and <a class="reference external" href="https://miktex.org/">MikTeX</a> and it is bundled with many Linux
+Distributions.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">§</a></h2>
+<dl>
+<dt>On <em>Linux</em>:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.perl.org/">Perl</a> should be already installed.</p></li>
+<li><p>You may have to install a package called <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> or similar.</p></li>
+</ul>
+</dd>
+<dt>On <em>macOS</em> with <a class="reference external" href="http://www.tug.org/mactex/">MacTeX</a>:</dt><dd><ul class="compact simple">
+<li><p>It’s probably already installed.</p></li>
+<li><p>If not, open “TeX Live Utility”, search for “latexmk” and install it.</p></li>
+<li><p>If you prefer using the Terminal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo tlmgr install latexmk
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+<dt>On <em>Windows</em> with <a class="reference external" href="https://miktex.org/">MikTeX</a>:</dt><dd><ul class="simple">
+<li><p>You probably have to install <a class="reference external" href="https://www.perl.org/">Perl</a>,
+e.g. from here: <a class="reference external" href="https://strawberryperl.com/">https://strawberryperl.com/</a>.</p></li>
+<li><p>If it’s not installed already, open the MikTeX Package Manager and install
+the <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> package.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="running-latexmk">
+<h2>Running Latexmk<a class="headerlink" href="#running-latexmk" title="Link to this heading">§</a></h2>
+<p>Latexmk is a command line application, see <a class="reference internal" href="#batch">below</a> for how to use it
+with batch files.</p>
+<p>In the simplest case you just have to type</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk
+</pre></div>
+</div>
+<p>This runs LaTeX on all <code class="docutils literal notranslate"><span class="pre">.tex</span></code> files in the current directory using the output
+format specified by the <a class="reference internal" href="#configuration-files">configuration files</a>.</p>
+<p>If you want to make sure to get a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file as output, just mention it:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-pdf
+</pre></div>
+</div>
+<p>If you want to use <code class="docutils literal notranslate"><span class="pre">latex</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code> but still want a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>
+file in the end, use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-pdfps
+</pre></div>
+</div>
+<p>If you want to compile only one specific <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file in the current directory,
+just provide the file name:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>myfile.tex
+</pre></div>
+</div>
+<p>If you want to preview the resulting output file(s), just use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-pv
+</pre></div>
+</div>
+<p>And now the <em>Killer Feature</em>:
+If you want Latexmk to continuously check all input files for changes and
+re-compile the whole thing if needed and always display the result, type</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-pvc
+</pre></div>
+</div>
+<p>Then, whenever you change something in <em>any</em> of your source files and save your
+changes, the preview is automagically updated.
+<em>But:</em> This doesn’t work with all viewers, especially not with <em>Adobe Reader</em>.
+See the section about <a class="reference internal" href="#configuration-files">configuration files</a> below for setting a suitable viewer
+application.</p>
+<p>Of course, options can be combined, e.g.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-pdf<span class="w"> </span>-pv<span class="w"> </span>myfile.tex
+</pre></div>
+</div>
+</section>
+<section id="cleaning-up">
+<h2>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Link to this heading">§</a></h2>
+<p>After running LaTeX, the current directory is contaminated with a myriad of
+temporary files; you can get rid of them with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-c
+</pre></div>
+</div>
+<p>This doesn’t delete the final <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>/<code class="docutils literal notranslate"><span class="pre">.ps</span></code>/<code class="docutils literal notranslate"><span class="pre">.dvi</span></code> files.
+If you want to delete those too, use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-C
+</pre></div>
+</div>
+</section>
+<section id="running-latexmk-with-batch-files">
+<span id="batch"></span><h2>Running Latexmk with Batch Files<a class="headerlink" href="#running-latexmk-with-batch-files" title="Link to this heading">§</a></h2>
+<p>If you are working on <em>Windows</em>, you may not be used to typing things at the
+command line. You may prefer clicking on things.</p>
+<p>No problem, just create a file (in the same folder as your <code class="docutils literal notranslate"><span class="pre">.tex</span></code> files)
+with the extension <code class="docutils literal notranslate"><span class="pre">.bat</span></code> containing</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>latexmk
+<span class="p">@</span><span class="k">pause</span>
+</pre></div>
+</div>
+<p>and double-click on it.</p>
+<p>You can of course use all the abovementioned options, don’t forget the
+especially useful ones <code class="docutils literal notranslate"><span class="pre">-c</span></code> and <code class="docutils literal notranslate"><span class="pre">-pvc</span></code>.</p>
+</section>
+<section id="configuration-files">
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Link to this heading">§</a></h2>
+<p>On <em>Linux</em>, you can put your configurations into <code class="docutils literal notranslate"><span class="pre">$HOME/.latexmkrc</span></code>,
+which could contain something like this:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$dvi_previewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;start xdvi -watchfile 1.5&#39;</span><span class="p">;</span>
+<span class="nv">$ps_previewer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;start gv --watch&#39;</span><span class="p">;</span>
+<span class="nv">$pdf_previewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;start evince&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>On <em>macOS</em>, you can also use <code class="docutils literal notranslate"><span class="pre">$HOME/.latexmkrc</span></code>, e.g. with this content:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$pdf_previewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;open -a Skim&#39;</span><span class="p">;</span>
+<span class="nv">$pdflatex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;pdflatex -synctex=1 -interaction=nonstopmode&#39;</span><span class="p">;</span>
+<span class="nv">@generated_exts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">@generated_exts</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;synctex.gz&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This uses <a class="reference external" href="https://skim-app.sourceforge.io/">Skim</a> as preview application, which can be set up to automatically
+update its display when the PDF file changes by selecting
+“Preferences” – “Sync” – “Check for file changes”.
+While you are at it, you should also activates the <em>SyncTeX</em> feature by
+selecting you editor right below in the “PDF-TeX Sync support” section.
+With this selected and with <code class="docutils literal notranslate"><span class="pre">-synctex=1</span></code> in your LaTeX call, you can
+Shift-⌘-click in the preview window and jump directly to the corresponding
+source text in your editor!</p>
+<p>On <em>Windows</em>, you can use the system-wide config file <code class="docutils literal notranslate"><span class="pre">C:\latexmk\LatexMk</span></code>
+(if the file doesn’t exist yet, just create a new text file with this name).
+To choose a PDF viewer, use something like this:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$pdf_previewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;start gsview32&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You’ll need <em>GSview</em> and <em>Ghostscript</em> for that,
+see <a class="reference external" href="http://pages.cs.wisc.edu/~ghost/gsview/">http://pages.cs.wisc.edu/~ghost/gsview/</a>.</p>
+<p>Some previewers use different methods for updating the viewed PDF file.
+You can change that with <code class="docutils literal notranslate"><span class="pre">$pdf_update_method</span></code>, like in this example:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$pdf_update_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="nv">$pdf_update_command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;bla bla bla&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Full documentation is available in the <a class="reference external" href="https://www.cantab.net/users/johncollins/latexmk/latexmk-480.txt">manpage</a>.</p>
+</section>
+<section id="local-configuration-files">
+<h2>Local Configuration Files<a class="headerlink" href="#local-configuration-files" title="Link to this heading">§</a></h2>
+<p>You can also put a configuration file in the current directory for settings
+which only influence files in the current directory.
+Such a configuration file has to be named <code class="docutils literal notranslate"><span class="pre">latexmkrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.latexmkrc</span></code> and
+may contain some of the following lines.</p>
+<p>To specify if you want PDF or PS output, choose one of those:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$pdf_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">        </span><span class="c1"># tex -&gt; pdf</span>
+<span class="nv">$pdf_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">        </span><span class="c1"># tex -&gt; ps -&gt; pdf</span>
+<span class="nv">$postscript_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1"># tex -&gt; ps</span>
+</pre></div>
+</div>
+<p>If you have your work split up into several parts, you have to specify the main
+file like this:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">@default_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;main.tex&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or maybe you want to process several files:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">@default_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;file-one.tex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;file-two.tex&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t specify <code class="docutils literal notranslate"><span class="pre">&#64;default_files</span></code>, all <code class="docutils literal notranslate"><span class="pre">.tex</span></code> files in the
+current directory will be used.</p>
+</div>
+</section>
+<section id="advanced-options">
+<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Link to this heading">§</a></h2>
+<p>Latexmk can also do more crazy stuff.</p>
+<p>For example, it can create a nomenclature (you’ll have to use the <em>nomencl</em>
+package) like this:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">@cus_dep_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">@cus_dep_list</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;glo gls 0 makenomenclature&quot;</span><span class="p">);</span>
+<span class="k">sub</span><span class="w"> </span><span class="nf">makenomenclature</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nb">system</span><span class="p">(</span><span class="s">&quot;makeindex $_[0].glo -s nomencl.ist -o $_[0].gls&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="nv">@generated_exts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">@generated_exts</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;glo&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or, if you are creating your figures in EPS format but you need them in PDF, you
+can tell Latexmk to convert them for you:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">@cus_dep_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">@cus_dep_list</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eps pdf 0 eps2pdf&quot;</span><span class="p">);</span>
+<span class="k">sub</span><span class="w"> </span><span class="nf">eps2pdf</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nb">system</span><span class="p">(</span><span class="s">&quot;epstopdf $_[0].eps&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If you need to enable shell escape for <code class="docutils literal notranslate"><span class="pre">\write18</span></code>
+(e.g. for on-the-fly figure generation):</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$latex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;latex -interaction=nonstopmode -shell-escape&#39;</span><span class="p">;</span>
+<span class="nv">$pdflatex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;pdflatex -interaction=nonstopmode -shell-escape&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And finally, if <code class="docutils literal notranslate"><span class="pre">latexmk</span> <span class="pre">-c</span></code> refuses to remove certain files, you can specify
+their extensions and next time they’ll be gone:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$clean_ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bbl nav out snm&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Have fun!</p>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git.html">Getting Started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-jupyter.html">Jupyter Notebooks in a Git Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importing-local-python-modules-from-jupyter-notebooks/index.html">Importing Local Python Modules from Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-audio.html">Audio in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reproducible_research.html">Reproducible Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_education.html">Open Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="free_audio_data.html">Re-usable Audio Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Creating a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_tutorial/make_tutorial.html">Make Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Latexmk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-latexmk">Running Latexmk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-up">Cleaning Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-latexmk-with-batch-files">Running Latexmk with Batch Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-files">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-configuration-files">Local Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-options">Advanced Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Getting Started with Sphinx and readthedocs.org</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">My Projects and Collaborations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotes.html">Quotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
+</ul>
+
+<div><hr class="docutils"></div>
+<ul>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="make_tutorial/make_tutorial.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Make Tutorial
+          </span>
+        </div>
+      </a>
+      <a class="next" href="sphinx.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Getting Started with Sphinx and readthedocs.org
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+<div class="articleComments">
+
+
+<script src="https://utteranc.es/client.js"
+        repo="mgeier/homepage"
+        issue-term="comments:latexmk"
+        label="comments"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</div>
+
+    <footer role="contentinfo">Dedicated to the public domain with
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+   class="reference external">CC0 1.0</a>.
+      Last updated on Aug 27, 2023.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>

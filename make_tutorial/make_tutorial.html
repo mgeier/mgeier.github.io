@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2024-05-02T20:23:30+00:00" />
+    <title>Make Tutorial &#8212; homepage</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../_static/insipid.css?v=b2d00be7" />
+
+    <script src="../_static/documentation_options.js?v=98035ebd"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script defer src="../_static/insipid.js"></script>
+    <script defer src="../_static/insipid-sidebar.js"></script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using Latexmk" href="../latexmk.html" />
+    <link rel="prev" title="Creating a Python Module" href="../python.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="../index.html" accesskey="U">homepage</a>
+            <a class="top" href="#">Make Tutorial</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="../search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="../python.html" class="nav-icon previous" title="previous:&#13;Creating a Python Module" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="../latexmk.html" class="nav-icon next" title="next:&#13;Using Latexmk" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="../python.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Creating a Python Module
+          </span>
+        </div>
+      </a>
+      <a class="next" href="../latexmk.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Using Latexmk
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="make-tutorial">
+<h1>Make Tutorial<a class="headerlink" href="#make-tutorial" title="Link to this heading">§</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is, much like the internet itself, and democracy, work-in-progress.</p>
+</div>
+<p>…</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span></code> runs other programs in the right order, handles intermediate files and generates files only if it’s necessary (i.e. if the sources have changed).</p>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Documentation for GNU make: <a class="reference external" href="http://www.gnu.org/software/make/">http://www.gnu.org/software/make/</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not use <code class="docutils literal notranslate"><span class="pre">make</span></code> for running <em>LaTeX</em>!</p>
+<p>It may be a reasonably usable tool for this and many people use and
+recommend it, e.g.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://robjhyndman.com/hyndsight/makefiles/">https://robjhyndman.com/hyndsight/makefiles/</a></p></li>
+<li><p><a class="reference external" href="http://kbroman.org/minimal_make/">http://kbroman.org/minimal_make/</a></p></li>
+<li><p><a class="reference external" href="https://web.archive.org/web/20230602040548/http://sidenote.hu/2012/02/04/makefile-for-large-latex-projects/">https://web.archive.org/web/20230602040548/http://sidenote.hu/2012/02/04/makefile-for-large-latex-projects/</a></p></li>
+</ul>
+<p>But there is a <em>much</em> superior tool for that, see <a class="reference internal" href="../latexmk.html"><span class="doc">Using Latexmk</span></a>!</p>
+</div>
+<section id="make-without-makefile">
+<h2><code class="docutils literal notranslate"><span class="pre">make</span></code> Without Makefile<a class="headerlink" href="#make-without-makefile" title="Link to this heading">§</a></h2>
+<p>Whenever you encounter a directory with a file called <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> in it, you know
+you can run <code class="docutils literal notranslate"><span class="pre">make</span></code> to automatically compile/generate/do whatever is specified in
+the <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code>.</p>
+<p>But you don’t even need such a file. You can also use <code class="docutils literal notranslate"><span class="pre">make</span></code> all by itself.
+To show an example for that, let’s create a file called <a class="reference download internal" download="" href="../_downloads/03029c6584d8734b436d1b760fecb78b/hello.cpp"><code class="xref download docutils literal notranslate"><span class="pre">hello.cpp</span></code></a>
+with the following content:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we can simply run …</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>hello
+</pre></div>
+</div>
+<p>… and it will magically be compiled (that is, if you have <code class="docutils literal notranslate"><span class="pre">make</span></code> and a C++
+compiler installed).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can ignore the details for now, but if you are curious, this is the exact
+command that will be called by <code class="docutils literal notranslate"><span class="pre">make</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++<span class="w">     </span>hello.cpp<span class="w">   </span>-o<span class="w"> </span>hello
+</pre></div>
+</div>
+<p>That means the C++ compiler is compiling (and linking) the source file
+<a class="reference download internal" download="" href="../_downloads/03029c6584d8734b436d1b760fecb78b/hello.cpp"><code class="xref download docutils literal notranslate"><span class="pre">hello.cpp</span></code></a> to produce an executable file called <code class="file docutils literal notranslate"><span class="pre">hello</span></code>
+(which you can run with <code class="docutils literal notranslate"><span class="pre">./hello</span></code> by the way).</p>
+<p>The command is automatically generated by this <em>implicit rule</em>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>%:<span class="w"> </span>%.cpp
+<span class="w">	</span><span class="k">$(</span>LINK.cpp<span class="k">)</span><span class="w"> </span>$^<span class="w"> </span><span class="k">$(</span>LOADLIBES<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LDLIBS<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>This uses the following variable declarations:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>LINK.cc<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CXXFLAGS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CPPFLAGS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LDFLAGS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>TARGET_ARCH<span class="k">)</span>
+
+LINK.cpp<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>LINK.cc<span class="k">)</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">CXX</span></code> is automatically set to the default C++ compiler (in our
+case <code class="docutils literal notranslate"><span class="pre">g++</span></code>). The other variables are by default undefined, but you can use
+them to specify any options you like.</p>
+<p>You can find out about all the rules and variables that <code class="docutils literal notranslate"><span class="pre">make</span></code> considers by
+running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">--print-data-base</span></code>, but more about all that later.</p>
+</div>
+</section>
+<section id="a-simple-makefile">
+<h2>A Simple Makefile<a class="headerlink" href="#a-simple-makefile" title="Link to this heading">§</a></h2>
+<p>The command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">hello</span></code> was pretty simple, wasn’t it? But we can make it even
+simpler, but for that we first have to create a <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> to specify all the
+necessary details.
+The most important things to write in there, are so-called <a class="reference external" href="http://www.gnu.org/software/make/manual/make.html#Rule-Syntax">rules</a>. Those
+consist of <em>targets</em>, <em>prerequisites</em> and a <em>recipe</em>, which can have several
+lines.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>target:<span class="w"> </span>prerequisites
+<span class="w">	</span>recipe
+<span class="w">	</span>...
+</pre></div>
+</div>
+<p>A <em>target</em> starts at the beginning of a line and ends with a colon.
+On the right side of the colon, there are zero, one or several <em>prerequisites</em>
+(separated by spaces). <em>Prerequisites</em> are sometimes also called <em>dependencies</em>.
+On the following line, after a leading tab character, there can be a <em>recipe</em>,
+which will be used by <code class="docutils literal notranslate"><span class="pre">make</span></code> to update the <em>target</em>, if necessary. <em>Recipes</em> are
+sometimes also called <em>commands</em>.</p>
+<p>But more about that later …</p>
+<p>Let’s create a file called <a class="reference download internal" download="" href="../_downloads/71847a80b520266254e5cd8f515adff2/Makefile.minimal"><code class="xref download docutils literal notranslate"><span class="pre">Makefile</span></code></a> with the
+following content:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>hello:
+</pre></div>
+</div>
+<p>That’s it. Nothing more. Only one line. Only 6 characters.</p>
+<p>This is a rule which contains only a <em>target</em>, i.e. the thing we want to get in
+the end. In our example that’s an executable named <code class="file docutils literal notranslate"><span class="pre">hello</span></code>. There are no
+<em>prerequisites</em> and no <em>recipe</em>. When <code class="docutils literal notranslate"><span class="pre">make</span></code> is called without specifying a
+target (like we did before with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">hello</span></code>), <code class="docutils literal notranslate"><span class="pre">make</span></code> chooses the first
+target it encounters in the <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code>, which is in our case – what a
+coincidence! – <code class="docutils literal notranslate"><span class="pre">hello</span></code>.
+With our brand-new <a class="reference download internal" download="" href="../_downloads/71847a80b520266254e5cd8f515adff2/Makefile.minimal"><code class="xref download docutils literal notranslate"><span class="pre">Makefile</span></code></a> in place, we can now
+simply call:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>… and it will do the same thing as before.</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>this can happen:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make: `hello&#39; is up to date.
+</pre></div>
+</div>
+</div>
+<p>From now on, we will make our <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> more and more elaborate and add many
+features, but the call to <code class="docutils literal notranslate"><span class="pre">make</span></code> will mostly stay that simple. That’s the
+beauty of it.</p>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">make</span></code>, it looks in the current directory for a file called
+<code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> or <code class="file docutils literal notranslate"><span class="pre">makefile</span></code>. That’s nice, so we don’t have to specify
+explicitly which file should be used. If we <em>do</em> want to specify a different
+file, however, we can do so with the <code class="docutils literal notranslate"><span class="pre">-f</span></code> option, e.g.:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>MyOtherMakefile
+</pre></div>
+</div>
+</section>
+<section id="cleaning-up">
+<h2>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Link to this heading">§</a></h2>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code></p>
+</div>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>clean-target, no prerequisites, one recipe</p>
+</div>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>$(RM) vs rm</p>
+</div>
+</section>
+<section id="adding-options">
+<h2>Adding Options<a class="headerlink" href="#adding-options" title="Link to this heading">§</a></h2>
+<p>So using the built-in <em>implicit rules</em> is nice and easy, but what if we want to
+tweak some options?</p>
+<p>Well, that’s no problem.
+Let’s say we want to add some options for the compiler, e.g. let’s enable some
+warnings. It’s always a good idea to enable compiler warnings!
+We do this by simply adding a variable to our
+<a class="reference download internal" download="" href="../_downloads/4251eac38d022c3f5c48b823705af253/Makefile.cxxflags1"><code class="xref download docutils literal notranslate"><span class="pre">Makefile</span></code></a>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic
+
+hello:
+</pre></div>
+</div>
+<p>When we now run <code class="docutils literal notranslate"><span class="pre">make</span></code>, we see that the actual command becomes:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w">    </span>hello.cpp<span class="w">   </span>-o<span class="w"> </span>hello
+</pre></div>
+</div>
+<p>So it worked, our command line option was put where it belongs.</p>
+<p>There are a lot of pre-defined variables …</p>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>CXX, CXXFLAGS, CC, CFLAGS, CPPFLAGS, LDLIBS, LDFLAGS, …</p>
+</div>
+<p>Now we know how to add options to our <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> permanently, but what if we
+want to try an option just once?</p>
+<p>No problem, we can specify the directly at the command line as environment
+variables. For example, if we want to try if our program can also be compiled
+with a different compiler, we can do this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CXX</span><span class="o">=</span>clang++<span class="w"> </span>make
+</pre></div>
+</div>
+<p>…</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang++<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w">    </span>hello.cpp<span class="w">   </span>-o<span class="w"> </span>hello
+</pre></div>
+</div>
+<p>Let’s try something else. Let’s run the optimizer on our little program:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="o">=</span>-O2<span class="w"> </span>make
+</pre></div>
+</div>
+<p>…</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w">    </span>hello.cpp<span class="w">   </span>-o<span class="w"> </span>hello
+</pre></div>
+</div>
+<p>But why? What happened to our <code class="docutils literal notranslate"><span class="pre">-O2</span></code> setting?</p>
+<p>Unfortunately, it was overwritten in our <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code>.
+If you want to allow specifying options in environment variables, you have to
+take care not to overwrite these variables.
+The easiest way to do this, is to use the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator in your
+<a class="reference download internal" download="" href="../_downloads/17e71838cd116699f52b8e00d4276af7/Makefile.cxxflags2"><code class="xref download docutils literal notranslate"><span class="pre">Makefile</span></code></a>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra
+
+hello:
+</pre></div>
+</div>
+<p>…</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="o">=</span>-O2<span class="w"> </span>make
+</pre></div>
+</div>
+<p>Et voilá:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>-O2<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w">    </span>hello.cpp<span class="w">   </span>-o<span class="w"> </span>hello
+</pre></div>
+</div>
+</section>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">§</a></h2>
+<p>…</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-p
+
+make<span class="w"> </span>-j8
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>= vs := vs ?= vs +=</p></li>
+<li><p>subdirs</p></li>
+<li><p><em>order-only</em> prerequisites</p></li>
+<li><p>.PHONY</p></li>
+<li><p>.DELETE_ON_ERROR</p></li>
+<li><p>.NOTPARALLEL</p></li>
+<li><p>.SECONDARY</p></li>
+<li><p>VPATH, vpath</p></li>
+<li><p>$(BLABLA:%old=%new)</p></li>
+<li><p>Target/pattern-specific variable values (incl <code class="docutils literal notranslate"><span class="pre">override</span></code>):
+<a class="reference external" href="http://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html">http://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html</a>
+<a class="reference external" href="http://www.gnu.org/software/make/manual/html_node/Pattern_002dspecific.html">http://www.gnu.org/software/make/manual/html_node/Pattern_002dspecific.html</a></p></li>
+</ul>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Getting Started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git-jupyter.html">Jupyter Notebooks in a Git Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../importing-local-python-modules-from-jupyter-notebooks/index.html">Importing Local Python Modules from Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-audio.html">Audio in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reproducible_research.html">Reproducible Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../open_education.html">Open Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licensing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../free_audio_data.html">Re-usable Audio Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Creating a Python Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Make Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#make-without-makefile"><code class="docutils literal notranslate"><span class="pre">make</span></code> Without Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-makefile">A Simple Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-up">Cleaning Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-options">Adding Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#todo">TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../latexmk.html">Using Latexmk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx.html">Getting Started with Sphinx and readthedocs.org</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">My Projects and Collaborations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quotes.html">Quotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">TODO</a></li>
+</ul>
+
+<div><hr class="docutils"></div>
+<ul>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="../python.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Creating a Python Module
+          </span>
+        </div>
+      </a>
+      <a class="next" href="../latexmk.html" aria-label="Next topic" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">next</span>
+            Using Latexmk
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+<div class="articleComments">
+
+
+<script src="https://utteranc.es/client.js"
+        repo="mgeier/homepage"
+        issue-term="comments:make_tutorial_make_tutorial"
+        label="comments"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</div>
+
+    <footer role="contentinfo">Dedicated to the public domain with
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+   class="reference external">CC0 1.0</a>.
+      Last updated on May 02, 2024.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>
